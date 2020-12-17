@@ -1,7 +1,8 @@
+import projects #projects definitions are placed in different file
+
+# https://flask.palletsprojects.com/en/1.1.x/api/
 from flask import Flask, render_template, url_for, request, redirect
 #create a Flask instance
-from Templates import projects
-
 app = Flask(__name__)
 
 @app.route('/')
