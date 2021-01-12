@@ -11,7 +11,7 @@ def base_route():
 
 @app.route('/')
 def home_route():
-    return render_template("home.html", projects=projects.setup())
+    return render_template("home1.html", projects=projects.setup())
 
 if __name__ == "__main__":
     #runs the application on the repl development server
