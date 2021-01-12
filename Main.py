@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/base/')
 def base_route():
-    return render_template("index.html", projects=projects.setup())
+    return render_template("about.html", projects=projects.setup())
 
 @app.route('/')
 def home_route():
