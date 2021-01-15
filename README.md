@@ -17,6 +17,9 @@ https://github.com/largecodeman1/IJustWorkHere/projects/1
 
 ## Scrum Team Cards/Tickets and Deployment Focus
 *Successfully integrated new login page into repository - Aiden
+
 *Imported and deployed login system into main website - Wesley
+
 *Set up a prototype database for displaying data - Zach
+
 *Research how to implement analysis for the program - Brandon
