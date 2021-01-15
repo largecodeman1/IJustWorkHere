@@ -16,10 +16,10 @@ https://github.com/largecodeman1/IJustWorkHere/projects/1
 * A big ticket feature for this project is the growth analysis. Be seeing what you are doing vs a baseline consisting of pros and one-tricks we can tell you how to improve.
 
 ## Scrum Team Cards/Tickets and Deployment Focus
-*Successfully integrated new login page into repository - Aiden
+* Successfully integrated new login page into repository - Aiden
 
-*Imported and deployed login system into main website - Wesley
+* Imported and deployed login system into main website - Wesley
 
-*Set up a prototype database for displaying data - Zach
+* Set up a prototype database for displaying data - Zach
 
-*Research how to implement analysis for the program - Brandon
+* Research how to implement analysis for the program - Brandon
