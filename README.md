@@ -34,6 +34,8 @@ Print to web page
 
 Check scrum board for more details
 
+## Runtime Link:http://24.255.211.218:8080/
+
 Grading
 
 * Aiden - 18/20
@@ -45,9 +47,9 @@ Grading
 * To use our program, first fill out the signup sheet where you will then be taken to the main page, and will be able to access the analysis program, which will be implemented in the future
 
 * For Test Riot Data, utilize the Url and paste in either psy6 or PsychicMaster6 after the initial / to get an example call
-ie. http://127.0.0.1:5000/riot_api_query/psy6
+ie. http://24.255.211.218:8080/riot_api_query/psy6
 
-* Runtime Link:
+
 
 ## Dependencies
 #pip install each of the following to run the program in intellij
