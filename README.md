@@ -47,6 +47,7 @@ Grading
 * To use our program, first fill out the signup sheet where you will then be taken to the main page, and will be able to access the analysis program, which will be implemented in the future
 
 * For Test Riot Data, utilize the Url and paste in either psy6 or PsychicMaster6 after the initial / to get an example call
+* Note: Riot API key needs to be updated every 24 hours
 ie. http://24.255.211.218:8080/riot_api_query/psy6
 
 
