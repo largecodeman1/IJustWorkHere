@@ -6,45 +6,48 @@ def JSON_PrettyPrint(json_object):
     return print(json.dumps(json_object, indent=2))
 
 #AccountId = input("what is the Summoner name: ")
+
 AccountId = 'psy6'
 
-url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + AccountId + "?api_key=RGAPI-YOUR-API-KEY"
+#APIQuery('psy6')
 
-payload={}
+def APIQuery(AccountId):
+    url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + AccountId + "?api_key=RGAPI-YOUR-API-KEY"
 
-API_Key = "RGAPI-e4e3243b-8da3-455c-b376-30fa025293ec"
+    payload={}
 
-headers = {
-    'X-Riot-Token': API_Key
-}
+    API_Key = "RGAPI-e4e3243b-8da3-455c-b376-30fa025293ec"
 
-response = requests.request("GET", url, headers=headers, data=payload)
+    headers = {
+        'X-Riot-Token': API_Key
+    }
+    response = requests.request("GET", url, headers=headers, data=payload)
 
-json_data = response.text
+    json_data = response.text
 
-json_object = json.loads(json_data)
+    json_object = json.loads(json_data)
 
-summoner_accountId = json_object['accountId']
+    summoner_accountId = json_object['accountId']
 
-url = "https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/" + summoner_accountId
+    url = "https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/" + summoner_accountId
 
-payload={}
+    payload={}
 
-response = requests.request("GET", url, headers=headers, data=payload)
+    response = requests.request("GET", url, headers=headers, data=payload)
 
-json_data = response.text
+    json_data = response.text
 
-json_object = json.loads(json_data)
+    json_object = json.loads(json_data)
 
-base_url = "https://na1.api.riotgames.com/lol/match/v4/matches/"
-
-for match in json_object['matches']:
-
+    base_url = "https://na1.api.riotgames.com/lol/match/v4/matches/"
+    #JSON_PrettyPrint(json_object)
 
 
+    #for match in json_object['matches']:
+    gameId = json_object['matches'][0]['gameId']
     #JSON_PrettyPrint(match)
-    gameId = match['gameId']
-    #print(gameId)
+    #gameId = match['gameId']
+    print("gameId: " + str(gameId))
 
     game_url = base_url + str(gameId)
     payload={}
@@ -52,9 +55,7 @@ for match in json_object['matches']:
     response = requests.request("GET", game_url, headers=headers, data=payload)
 
     json_data = response.text
-
     json_object = json.loads(json_data)
-
     #JSON_PrettyPrint(json_object)
 
     for participant in json_object['participantIdentities']:
@@ -63,6 +64,7 @@ for match in json_object['matches']:
         if summoner_accountId == participant['player']['accountId']:
             participantId = participant['participantId']
             profileIcon = participant['player']['profileIcon']
+            #goldEarned = participant['player']['goldEarned']
             break
         else:
             continue
@@ -72,28 +74,35 @@ for match in json_object['matches']:
         #JSON_PrettyPrint(participantId_data)
         if participantId == participantId_data['participantId']:
             print("Match Id for participant: " + str(participantId_data))
-            JSON_PrettyPrint(participantId_data)
+            #JSON_PrettyPrint(participantId_data)
             championId = int(participantId_data['championId'])
-            #profileIcon = int(participantId_data['profileIcon'])
+            goldEarned = int(participantId_data['stats']['goldEarned'])
             print("championId: " + str(championId))
             print("profileIcon: " +str(profileIcon))
+            print("goldEarned: " +str(goldEarned))
+            break
             #print("profileIcon: " + str(profileIcon))
             #print("Total Time cc: " + str(totalTimeCrowdControlDealt))
             #totalTimeCrowdControlDealt = int(participantId_data['totalTimeCrowdControlDealt'])
-    exit(1)
+    result = {'gameId': gameId, 'participantId': participantId, 'championId': championId, 'profileIcon': profileIcon, 'goldEarned': goldEarned}
+    #result = {'gameId': '3730386044', 'participantId': 6, 'championId': 200, 'goldEarned': 8970}
+    return(result)
+#APIQuery(AccountId)
+
+def test_transfer_data1(test):
+    test = {'gameId': '3730386044', 'participantId': 6, 'championId': 200, 'profileIcon': 10, 'goldEarned': 8970}
+    return test
+
+def clear_data():
+    test = {'gameId': '','participantId': '', 'championId': '', 'profileIcon': '', 'goldEarned': ''}
+    return test
 
 
 
 
-
-
-
-
-
-
-
-
-
+if __name__ == "__main__":
+    AccountId = 'psy6'
+    APIQuery(AcountID)
 
 
 
