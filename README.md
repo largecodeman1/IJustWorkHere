@@ -41,7 +41,7 @@ Grading
 * Aiden - 18/20
 * Zach - 20/20
 * Wesley - 20/20
-* Brandon - 17/20
+* Brandon - 19/20
 
 ## Instructions
 * To use our program, first fill out the signup sheet where you will then be taken to the main page, and will be able to access the analysis program, which will be implemented in the future
