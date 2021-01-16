@@ -16,7 +16,7 @@ def APIQuery(AccountId):
 
     payload={}
 
-    API_Key = "RGAPI-e4e3243b-8da3-455c-b376-30fa025293ec"
+    API_Key = "RGAPI-c9e5aa5c-307f-4404-869d-bb824d889644"
 
     headers = {
         'X-Riot-Token': API_Key
