@@ -22,7 +22,12 @@ https://github.com/largecodeman1/IJustWorkHere/projects/1
 * Imported and deployed login system into main website - Wesley
 (NOTE) We have yet to link a button onto the login and signup system, so type in /login or /signup into the url. The process is being worked on.
 
-* Set up a prototype database for displaying data - Zach
+* Create a get to recieve and pull - Zach
+- - match Ids
+- - Encrypted summoner names
+- - Match Lists
+
+Print to web page 
 
 * Research how to implement analysis for the program - Brandon
 
