@@ -26,6 +26,8 @@ https://github.com/largecodeman1/IJustWorkHere/projects/1
 
 * Research how to implement analysis for the program - Brandon
 
+Check scrum board for more details
+
 Grading
 
 * Aiden - 18/20
