@@ -16,13 +16,19 @@ https://github.com/largecodeman1/IJustWorkHere/projects/1
 * A big ticket feature for this project is the growth analysis. Be seeing what you are doing vs a baseline consisting of pros and one-tricks we can tell you how to improve.
 * A big ticket feature for this project is the growth analysis. Be seeing what you are doing vs a baseline consisting of pros and one-tricks we can tell you how to improve.
 
-## Scrum Team Cards/Tickets and Deployment Focus
+## Scrum Board Cards/Tickets and Deployment Focus
+# https://github.com/largecodeman1/IJustWorkHere/projects/1
 * Successfully integrated new login page into repository, working on adding a linking button to get from the login page to the website - Aiden
 
 * Imported and deployed login system into main website - Wesley
 (NOTE) We have yet to link a button onto the login and signup system, so type in /login or /signup into the url. The process is being worked on.
 
-* Set up a prototype database for displaying data - Zach
+* Create a get to recieve and pull - Zach
+- - match Ids
+- - Encrypted summoner names
+- - Match Lists
+
+Print to web page 
 
 * Research how to implement analysis for the program - Brandon
 
@@ -37,7 +43,18 @@ Grading
 
 ## Instructions
 * To use our program, first fill out the signup sheet where you will then be taken to the main page, and will be able to access the analysis program, which will be implemented in the future
+
+* For Test Riot Data, utilize the Url and paste in either psy6 or PsychicMaster6 after the initial / to get an example call
+ie. http://127.0.0.1:5000/riot_api_query/psy6
+
 * Runtime Link:
 
 ## Dependencies
+#pip install each of the following to run the program in intellij
 * Flask
+* flask_bootstrap
+* flask_wtf
+* wtforms
+* flask_sqlalchemy
+* werkzeug.security
+* flask_login
