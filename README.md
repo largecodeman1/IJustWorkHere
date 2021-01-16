@@ -42,6 +42,9 @@ Grading
 
 ## Instructions
 * To use our program, first fill out the signup sheet where you will then be taken to the main page, and will be able to access the analysis program, which will be implemented in the future
+
+* For Test Riot Data, utilize the Url and paste in either psy6 or PsychicMaster6 to get an example call
+
 * Runtime Link:
 
 ## Dependencies
