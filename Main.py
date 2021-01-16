@@ -13,6 +13,10 @@ def base_route():
 def home_route():
     return render_template("home1.html", projects=projects.setup())
 
+@app.route('/riot_api_example')
+def riot_api_example():
+    return render_template("riot_api_example.html", projects=projects.setup())
+
 if __name__ == "__main__":
     #runs the application on the repl development server
     app.run(port='5000', host='127.0.0.1')
