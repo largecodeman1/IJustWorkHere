@@ -11,8 +11,9 @@ from models.lessons import menus, TITLE, PROJECTS, select_2_proj, lessons_dict
 
 @app.route('/')
 def index():
-    return render_template("homesite/home.html", menus=menus)
-
+#    return render_template("homesite/home.html", menus=menus)
+     return redirect(url_for('pythondb_bp.databases'))
+ #   return render_template("pythondb/templates/pythondb/index.html", menus=menus)
 
 @app.route('/landing/<selection>/', methods=['GET', 'POST'])
 def landing(selection):
