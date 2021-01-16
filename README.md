@@ -19,6 +19,7 @@ https://github.com/largecodeman1/IJustWorkHere/projects/1
 * Successfully integrated new login page into repository - Aiden
 
 * Imported and deployed login system into main website - Wesley
+(NOTE) We have yet to link a button onto the login and signup system, so type in /login or /signup into the url 
 
 * Set up a prototype database for displaying data - Zach
 
