@@ -40,7 +40,7 @@ class RegisterForm(FlaskForm):
 	password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=80)])
 
 @app.route('/')
-def initial():fadfdf
+def initial():
 	return render_template('initial.html')
 
 @app.route('/login', methods=['GET', 'POST'])
