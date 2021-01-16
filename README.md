@@ -39,5 +39,5 @@ Grading
 * To use our program, first fill out the signup sheet where you will then be taken to the main page, and will be able to access the analysis program, which will be implemented in the future
 * Runtime Link:
 
-##Dependencies
+## Dependencies
 * Flask
