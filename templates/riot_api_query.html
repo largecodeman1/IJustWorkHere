@@ -53,13 +53,32 @@ h1, h2, h3, h4, h5, h6 {
 </form>
 <!--{{Summoner_Id_data}}-->
 </body>
-</html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=1024">
+        <title>Example 01: No CSS</title>
+    </head>
 
-<div></div>
-<p>Summoner Id:  {{nameId}}</p>
-<p>Game Id:  {{gameId}}</p>
-<p>Participant Id:  {{participantId}}</p>
-<p>Champion Id:     {{championId}}</p>
-<p>Profile Icon:     {{profileIcon}}</p>
-<p>Gold Earned:      {{goldEarned}}</p>
-
+    <body>
+    <div id="wrapper">
+        <div class="chart">
+            <h3>League Stats</h3>
+            <table id="data-table" border="1" cellpadding="10" cellspacing="0"
+                   summary="oh lord please work">
+                <caption>Your Profile</caption>
+                <thead>
+                <tr>
+                    <td>&nbsp;</td>
+                    <th scope="col">Summoner Id:  {{nameId}}</th>
+                    <th scope="col">Game Id:  {{gameId}}</th>
+                    <th scope="col">Participant Id:  {{participantId}}</th>
+                    <th scope="col">Champion Id:     {{championId}}</th>
+                    <th scope="col">Gold Earned:      {{goldEarned}}</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    </body>
+    </html>
