@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import projects #projects definitions are placed in different file
 from API_test import APIQuery, test_transfer_data1, clear_data
+
 #import API_test, transfer_data1, APIQuery
 # # https://flask.palletsprojects.com/en/1.1.x/api/
 
@@ -41,10 +42,6 @@ class RegisterForm(FlaskForm):
 	email = StringField('Email', validators=[InputRequired(),Email(message='Invalid email'), Length(max=50)])
 	password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=80)])
 
-@app.route('/')
-def home1():
-	return render_template('home1.html')
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	form = LoginForm() 
@@ -57,6 +54,8 @@ def login():
 				return redirect(url_for('base_route'))
 
 		return '<h1> Invalid username or password </h1>'
+		
+	
 
 	return render_template('login.html', form=form)
 
@@ -78,8 +77,8 @@ def base_route():
 	return render_template("base.html", projects=projects.setup())
 
 @app.route('/')
-def home_route():
-	return render_template("home1.html", projects=projects.setup())
+def initial():
+	return render_template("initial.html", projects=projects.setup())
 
 @app.route('/riot_api_result')
 def riot_api_result():
