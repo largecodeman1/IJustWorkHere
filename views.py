@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import projects #projects definitions are placed in different file
 from API_test import APIQuery, test_transfer_data1, clear_data
+import json
 
 #import API_test, transfer_data1, APIQuery
 # # https://flask.palletsprojects.com/en/1.1.x/api/
@@ -116,10 +117,13 @@ def riot_api_query_with_name(name):
 	Summoner_Id_data = clear_data()
 	# POST redirection to content page
 	if name != "":
-		print(name)
+		#print(name)
 		#Summoner_Id_data = test_transfer_data1(name)
 		Summoner_Id_data = APIQuery(name)
-
+		#print(Summoner_Id_data)
+	r = json.dumps(Summoner_Id_data)
+	loaded_r = json.loads(r)
+	#print(r)
 	#Summoner_Id_data = transfer_data1(name)
 	#Summoner_Id_data = clear_data()
 	#if request.method == 'POST':
@@ -133,7 +137,7 @@ def riot_api_query_with_name(name):
 			# riotApiResult = apiCallStatus + riotApiData
 	#		return render_template("riot_api_query.html", Summoner_Id_data = Summoner_Id_data)
 	#	#return redirect(url_for('riot_api_result', riotApiResult=riotApiResult))
-	return render_template("riot_api_query.html", Summoner_Id_data = Summoner_Id_data, name=name)
+	return render_template("riot_api_query.html", Summoner_Id_data = loaded_r, name=name)
 
 if __name__ == "__main__":
 	#runs the application on the repl development server
