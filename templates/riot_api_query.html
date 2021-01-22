@@ -19,6 +19,25 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 5px;
 }
 </style>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <a href="#home" class="w3-bar-item w3-button"><b>Pro</b> Stats</a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+            <a href="#projects" class="w3-bar-item w3-button">Home</a>
+            <a href="#about" class="w3-bar-item w3-button">About</a>
+            <a href="/signup" class="w3-bar-item w3-button">Signup</a>
+            <a href="/login" class="w3-bar-item w3-button">Login</a>
+            <a href="/riot_api_query/psy6" class="w3-bar-item w3-button">Test Riot Data</a>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
 <body>
 
 
@@ -39,14 +58,13 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-    <img class="w3-image" alt="RIOT API QUERY EXAMPLE: " width="1600" height="800">
     <div class="w3-display-bottomleft w3-padding-large w3-opacity">
 <!--        <h1 class="w3-xxlarge">RIOT API EXAMPLE: (try psy6)</h1>-->
     </div>
 </header>
 
 <html>
-<div><p></p></div>
+<div><p>RIOT API QUERY EXAMPLE: </p></div>
 <div>
 
     <i>(USAGE: <b>URL_BASE/riot_api_query/SummonorId</b> for example <b>URL_BASE/riot_api_query/psy6</b>)</i>
