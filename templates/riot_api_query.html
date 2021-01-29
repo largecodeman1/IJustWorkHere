@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% set nameId = name %}
+{% set Summoner_Id_data = Summoner_Id_data %}
 {% set gameId = Summoner_Id_data["gameId"] %}
 {% set participantId = Summoner_Id_data["participantId"] %}
 {% set championId = Summoner_Id_data["championId"] %}
@@ -112,16 +113,19 @@ h1, h2, h3, h4, h5, h6 {
                     <th style="text-align:center" scope="col">Participant Id</th>
                     <th style="text-align:center" scope="col">Champion Id</th>
                     <th style="text-align:center" scope="col">Gold Earned</th>
-                    <th style="text-align:center" scope="col">Gmae Profile Icon</th>
+                    <th style="text-align:center" scope="col">Game Profile Icon</th>
                 </tr>
-                <tr>
-                    <td style="text-align:center" scope="col">{{nameId}}</td>
-                    <td style="text-align:center" scope="col">{{gameId}}</td>
-                    <td style="text-align:center" scope="col">{{participantId}}</td>
-                    <td style="text-align:center" scope="col">{{championId}}</td>
-                    <td style="text-align:center" scope="col">{{goldEarned}}</td>
-                    <td style="text-align:center"><img src="http://ddragon.leagueoflegends.com/cdn/11.1.1/img/profileicon/{{profileIcon}}.png" alt="" height=100 width=100></img></td>
-                </tr>
+                    {% for matchId in Summoner_Id_data %}
+                            <tr>
+                                <td>{{nameId}}</td><br>
+                                <td>{{Summoner_Id_data[matchId].gameId }}</td>
+                                <td>{{Summoner_Id_data[matchId].participantId}}</td>
+                                <td>{{Summoner_Id_data[matchId].championId }}</td>
+                                <td>{{Summoner_Id_data[matchId].goldEarned}}</td>
+                                {% set profileIcon = Summoner_Id_data[matchId].profileIcon %}
+                                <td style="text-align:center"><img src="http://ddragon.leagueoflegends.com/cdn/11.1.1/img/profileicon/{{profileIcon}}.png" alt="" height=100 width=100></td>
+                            </tr>
+                    {% endfor %}
                 </thead>
             </table>
         </div>

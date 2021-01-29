@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import projects #projects definitions are placed in different file
 from API_test import APIQuery, test_transfer_data1, clear_data
+import json
 
 #import API_test, transfer_data1, APIQuery
 # # https://flask.palletsprojects.com/en/1.1.x/api/
@@ -73,6 +74,7 @@ def signup():
 	return render_template('signup.html', form=form)
 
 @app.route('/base/')
+@login_required
 def base_route():
 	return render_template("base.html", projects=projects.setup())
 
@@ -80,11 +82,19 @@ def base_route():
 def initial():
 	return render_template("initial.html", projects=projects.setup())
 
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('signup'))
+
 @app.route('/riot_api_result')
+@login_required
 def riot_api_result():
  	return 'Hi'
 
 @app.route('/riot_api_query', methods=["GET", "POST"])
+@login_required
 def riot_api_query():
 	apiCallStatus = ''
 	riotApiResult = ''
@@ -110,15 +120,20 @@ def riot_api_query():
 	return render_template("riot_api_query.html", Summoner_Id_data = Summoner_Id_data, name=name)
 
 @app.route('/riot_api_query/<name>', methods=["GET", "POST"])
+@login_required
 def riot_api_query_with_name(name):
 	apiCallStatus = ''
 	riotApiResult = ''
 	Summoner_Id_data = clear_data()
 	# POST redirection to content page
 	if name != "":
-		print(name)
+		#print(name)
 		#Summoner_Id_data = test_transfer_data1(name)
 		Summoner_Id_data = APIQuery(name)
+		#print(Summoner_Id_data)
+	r = json.dumps(Summoner_Id_data)
+	loaded_r = json.loads(r)
+	#print(r)
 
 	#Summoner_Id_data = transfer_data1(name)
 	#Summoner_Id_data = clear_data()
@@ -133,7 +148,7 @@ def riot_api_query_with_name(name):
 			# riotApiResult = apiCallStatus + riotApiData
 	#		return render_template("riot_api_query.html", Summoner_Id_data = Summoner_Id_data)
 	#	#return redirect(url_for('riot_api_result', riotApiResult=riotApiResult))
-	return render_template("riot_api_query.html", Summoner_Id_data = Summoner_Id_data, name=name)
+	return render_template("riot_api_query.html", Summoner_Id_data = loaded_r, name=name)
 
 if __name__ == "__main__":
 	#runs the application on the repl development server
