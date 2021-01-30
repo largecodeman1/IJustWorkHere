@@ -151,7 +151,7 @@ def riot_api_query_with_name(name):
 	return render_template("riot_api_query.html", Summoner_Id_data = loaded_r, name=name)
 
 @app.route('/Easter Egg/')
-def base_route():
+def easter_egg_route():
 	return render_template("Egg Easter.html", projects=projects.setup())
 
 if __name__ == "__main__":
