@@ -150,6 +150,10 @@ def riot_api_query_with_name(name):
 	#	#return redirect(url_for('riot_api_result', riotApiResult=riotApiResult))
 	return render_template("riot_api_query.html", Summoner_Id_data = loaded_r, name=name)
 
+@app.route('/Easter Egg/')
+def base_route():
+	return render_template("Egg Easter.html", projects=projects.setup())
+
 if __name__ == "__main__":
 	#runs the application on the repl development server
 	app.run(port='5000', host='127.0.0.1', debug = True)
