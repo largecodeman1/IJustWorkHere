@@ -57,24 +57,24 @@ Past
 Past 12/14/20 - 1/11/21
 
 * Aiden - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52772395
-        https://github.com/largecodeman1/IJustWorkHere/projects/1#card-51612766
+          https://github.com/largecodeman1/IJustWorkHere/projects/1#card-51612766
         
 * Zach - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52930789
-       https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52709625
-       https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52930817
+         https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52709625
+         https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52930817
 
 * Wesley - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52772343
-         https://github.com/largecodeman1/IJustWorkHere/projects/1#card-51612798
+           https://github.com/largecodeman1/IJustWorkHere/projects/1#card-51612798
          
 * Brandon - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52607939
-          https://github.com/largecodeman1/IJustWorkHere/projects/1#card-51612834
+            https://github.com/largecodeman1/IJustWorkHere/projects/1#card-51612834
           
 Present 1/25 - Now
 
 * Aiden - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53782757 
 
 * Zach - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53870553
-       https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53870542
+         https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53870542
        
 * Wesley - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53782311
 
