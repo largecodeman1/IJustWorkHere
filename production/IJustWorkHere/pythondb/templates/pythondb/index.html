@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+{% extends "homesite/base.html" %}
+{% block content %}
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <div class="jumbotron jumbotron-fluid" style="height: 50%; ">
+        <div class="row justify-content-center">
+            <div class="col-10" style="text-align: center;">
+                <h1>Hello to Databases and Python</h1>
+                <table id="links">
+                    <tr>
+                        <td><a href=#FE-HTML>HTML Code</a></td>
+                        <td><a href=#BE-VIEW>View Code</a></td>
+                        <td><a href=#BE-MODEL>Model Code</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="jumbotron jumbotron-fluid" style="height: 50%; ">
+
+        <div class="row justify-content-center">
+            <div class="col-10" style="text-align: center;">
+                <h1>Sample Table</h1>
+            </div>
+        </div>
+
+        <div class="row courses-buttons justify-content-center">
+            <table id="links">
+            <tr>
+                <td><a href={{url_for('.databases')}}>Full Table </a></td>
+                <td><a href={{url_for('.emails')}}>E-Mails only</a></td>
+                <td><a href={{url_for('.phones')}}>Phones only</a></td>
+            </tr>
+            </table>
+        </div>
+
+        <!-- Table block is dependent on table variable and dictionary setup -->
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Password</th>
+                <th>Emails</th>
+                <th>Phone Numbers</th>
+            </tr>
+            <!-- Loop through rows in table -->
+            {% for row in table %}
+                <!-- build elements in table -->
+                <tr>
+                    <th>{{ row['id'] }}</th>
+                    <th>{{ row['name'] }}</th>
+                    <th>{{ row['password'] }}</th>
+                    <th>{{ row['emails'] }}</th>
+                    <th>{{ row['phone_numbers'] }}</th>
+                </tr>
+            {% endfor %}
+        </table>
+
+
+    </div>
+
+    <div class="jumbotron jumbotron-fluid" style="height: 50%; ">
+
+        <div class="row justify-content-center">
+            <div class="col-10" style="text-align: center;">
+                <h1>CRUD: Create</h1>
+            </div>
+        </div>
+
+        <div class="row courses-buttons justify-content-center">
+
+            <form method="POST" ID="myForm" action={{url_for('.create')}} >
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                    </tr>
+                    <tr>
+                        <th><input type="text" name="username"></th>
+                        <th><input type="text" name="password"></th>
+                        <th><input type="text" name="email"></th>
+                        <th><input type="text" name="phone_number"></th>
+                        <th><input type="submit" value="Add"></th>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid" style="height: 50%; ">
+
+        <div class="row justify-content-center">
+            <div class="col-10" style="text-align: center;">
+                <h1>CRUD: Read</h1>
+            </div>
+        </div>
+
+        <div class="row courses-buttons justify-content-center">
+
+            <form method="POST" ID="myForm" action={{url_for('.read')}} >
+                <table id="links">
+                    <tr><td><select name="ID">
+                        <optgroup label="userid">
+                            {%  for row in table: %}
+                                <option label="{{ row['id'] }}">{{ row['id'] }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    </select></td>
+                        <td><input type="submit" value="Filter"></td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid" style="height: 50%; ">
+
+        <div class="row justify-content-center">
+            <div class="col-10" style="text-align: center;">
+                <h1>CRUD: Update</h1>
+            </div>
+        </div>
+
+        <div class="row courses-buttons justify-content-center">
+
+            <form method="POST" ID="myForm" action={{url_for('.update')}} >
+                <table id="links">
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                    </tr>
+                    <tr>
+                        <td>
+                        <select name="ID">
+                            <optgroup label="userid">
+                                {%  for row in table: %}
+                                    <option label="{{ row['id'] }}">{{ row['id'] }}</option>
+                                {% endfor %}
+                            </optgroup>
+                        </select>
+                        </td>
+                        <th><input type="text" name="email"></th>
+                        <th><input type="text" name="phone_number"></th>
+                        <th><input type="submit" value="Update"></th>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid" style="height: 50%; ">
+
+        <div class="row justify-content-center">
+            <div class="col-10" style="text-align: center;">
+                <h1>CRUD: Delete</h1>
+            </div>
+        </div>
+
+        <div class="row courses-buttons justify-content-center">
+
+            <form method="POST" ID="myForm" action={{url_for('.delete')}} >
+                <table id="links">
+                    <tr><td><select name="ID">
+                        <optgroup label="userid">
+                            {%  for row in table: %}
+                                <option label="{{ row['id'] }}">{{ row['id'] }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    </select>
+                    </td><td><input type="submit" value="Delete"></td></tr>
+                </table>
+            </form>
+
+        </div>
+    </div>
+
+    <div align="center" >
+        <h1 id="FE-HTML">Front End HTML Code</h1>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fflask-idea-homesite%2Fblob%2Fmaster%2Fpythondb%2Ftemplates%2Fpythondb%2Findex.html&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+    </div>
+
+    <div align="center" >
+        <h1 id="BE-VIEW">Back End View Code</h1>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fflask-idea-homesite%2Fblob%2Fmaster%2Fpythondb%2Fview.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+    </div>
+
+    <div align="center" >
+        <h1 id="BE-MODEL">Back End Model Code</h1>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fflask-idea-homesite%2Fblob%2Fmaster%2Fpythondb%2Fmodel.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+    </div>
+
+{% endblock %}

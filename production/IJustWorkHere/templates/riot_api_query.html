@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% set nameId = name %}
+{% set Summoner_Id_data = Summoner_Id_data %}
+{% set gameId = Summoner_Id_data["gameId"] %}
+{% set participantId = Summoner_Id_data["participantId"] %}
+{% set championId = Summoner_Id_data["championId"] %}
+{% set profileIcon = Summoner_Id_data["profileIcon"] %}
+{% set goldEarned = Summoner_Id_data["goldEarned"] %}
+
+<html>
+<title>RIOT API TEST</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <a href="#home" class="w3-bar-item w3-button"><b>Pro</b> Stats</a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+            <a href="#projects" class="w3-bar-item w3-button">Home</a>
+            <a href="#about" class="w3-bar-item w3-button">About</a>
+            <a href="/signup" class="w3-bar-item w3-button">Signup</a>
+            <a href="/login" class="w3-bar-item w3-button">Login</a>
+            <a href="/riot_api_query/psy6" class="w3-bar-item w3-button">Test Riot Data</a>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<body>
+
+
+<!-- Navbar (sit on top) -->
+<!--<div class="w3-top">-->
+<!--    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">-->
+<!--        <a href="#home" class="w3-bar-item w3-button"><span class="w3-tag w3-grey">Pro</span> Stats</a>-->
+<!--        &lt;!&ndash; Right-sided navbar links. Hide them on small screens &ndash;&gt;-->
+<!--        <div class="w3-right w3-hide-small">-->
+<!--            <a href="#about" class="w3-bar-item w3-button"></a>-->
+<!--            <a href="#menu" class="w3-bar-item w3-button"></a>-->
+<!--            <a href="#contact" class="w3-bar-item w3-button"></a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+    <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+<!--        <h1 class="w3-xxlarge">RIOT API EXAMPLE: (try psy6)</h1>-->
+    </div>
+</header>
+
+<html>
+<div><p>RIOT API QUERY EXAMPLE: </p></div>
+<div>
+
+    <i>(USAGE: <b>URL_BASE/riot_api_query/SummonorId</b> for example <b>URL_BASE/riot_api_query/psy6</b>)</i>
+    <br>
+    <br>
+    <table>
+        <tr>Don't have a league of legends Summonor Id?  Try one of these sorry souls below:</tr>
+        <tr>
+            <td style="text-align:left" scope="col"><div><a href="/riot_api_query/psy6">Zachary</a></div></td>
+        </tr>
+        <tr>
+            <td style="text-align:left" scope="col"><div><a href="/riot_api_query/dracus1234567">Bradon</a></div></td>
+        </tr>
+        <tr>
+            <td style="text-align:left" scope="col"><div><a href="/riot_api_query/TheReanuKeeves">Wesley</a></div></td>
+        </tr>
+        <tr>
+            <td style="text-align:left" scope="col"><div><a href="/riot_api_query/BallisticsExpert">Adien</a></div></td>
+        </tr>
+    </table>
+</div>
+<body>
+<form  method = "post" action="/riot_api_result">
+    <h3>Result Search from Server:</h3>
+</form>
+<!--{{Summoner_Id_data}}-->
+</body>
+<body background="https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555276986/shape/mentalfloss/mizu.png?itok=seYBGPIV">
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=1024">
+        <title>Example 01: No CSS</title>
+    </head>
+
+    <body>
+    <div id="wrapper">
+        <div class="chart">
+            <table id="data-table" border="1" cellpadding="10" cellspacing="0"
+                   summary="oh lord please work">
+                <caption><h3>League Stats for <b>{{nameId}}</b></h3></caption>
+                <thead>
+                <tr>
+                    <th style="text-align:center" scope="col">Summoner Id</th>
+                    <th style="text-align:center" scope="col">Game Id</th>
+                    <th style="text-align:center" scope="col">Participant Id</th>
+                    <th style="text-align:center" scope="col">Champion Id</th>
+                    <th style="text-align:center" scope="col">Gold Earned</th>
+                    <th style="text-align:center" scope="col">Game Profile Icon</th>
+                </tr>
+                    {% for matchId in Summoner_Id_data %}
+                            <tr>
+                                <td>{{nameId}}</td><br>
+                                <td>{{Summoner_Id_data[matchId].gameId }}</td>
+                                <td>{{Summoner_Id_data[matchId].participantId}}</td>
+                                <td>{{Summoner_Id_data[matchId].championId }}</td>
+                                <td>{{Summoner_Id_data[matchId].goldEarned}}</td>
+                                {% set profileIcon = Summoner_Id_data[matchId].profileIcon %}
+                                <td style="text-align:center"><img src="http://ddragon.leagueoflegends.com/cdn/11.1.1/img/profileicon/{{profileIcon}}.png" alt="" height=100 width=100></td>
+                            </tr>
+                    {% endfor %}
+                </thead>
+            </table>
+        </div>
+    </div>
+    </body>
+    </html>
