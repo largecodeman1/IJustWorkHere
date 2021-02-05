@@ -20,7 +20,7 @@ AccountId = 'psy6'
 #
 # NOTE: NEED TO UPDATE THIS EVERY 24 HOURS - Call Zach or create your own account on developer.riotgames.com
 #
-API_Key = "RGAPI-ca24cc7a-9a18-4526-bf45-61e2301852c8"
+API_Key = "RGAPI-7e388eac-9a63-4976-b676-0584fd1bcfa1"
 
 # Get Riot test data for mid-term and after put into database
 def Riot_Encrypted_Id(AccountId):
