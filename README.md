@@ -36,12 +36,51 @@ Check scrum board for more details
 
 ## Runtime Link:http://24.255.211.218:8080/
 
-Grading
+## Grading
+
+Past
 
 * Aiden - 18/20
 * Zach - 20/20
 * Wesley - 20/20
 * Brandon - 19/20
+
+2/5/21
+
+* Aiden - 
+* Zach - 
+* Wesley - 
+* Brandon - 
+
+## Tickets 
+
+Past 12/14/20 - 1/11/21
+
+Aiden - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52772395
+        https://github.com/largecodeman1/IJustWorkHere/projects/1#card-51612766
+        
+Zach - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52930789
+       https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52709625
+       https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52930817
+
+Wesley - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52772343
+         https://github.com/largecodeman1/IJustWorkHere/projects/1#card-51612798
+         
+Brandon - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52607939
+          https://github.com/largecodeman1/IJustWorkHere/projects/1#card-51612834
+          
+Present 1/25 - Now
+
+Aiden - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53782757 
+
+Zach - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53870553
+       https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53870542
+       
+Wesley - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53782311
+
+Brandon - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53869792
+
+
 
 ## Instructions
 * To use our program, first fill out the signup sheet where you will then be taken to the main page, and will be able to access the analysis program, which will be implemented in the future
