@@ -86,7 +86,7 @@ def initial():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('signup'))
+    return redirect(url_for('initial'))
 
 @app.route('/riot_api_result')
 @login_required
