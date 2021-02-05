@@ -33,8 +33,7 @@ Print to web page
 * Research how to implement analysis for the program - Brandon
 
 Check scrum board for more details
-
-## Runtime Link:http://24.255.211.218:8080/
+## Runtime Link:http://leagueofstats.cf:8080/ or Runtime Link:http://24.255.211.218:8080/
 
 ## Grading
 
