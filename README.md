@@ -46,10 +46,10 @@ Past
 
 2/5/21
 
-* Aiden - 
-* Zach - 
-* Wesley - 
-* Brandon - 
+* Aiden - 25
+* Zach - 25
+* Wesley - 25
+* Brandon - 25
 
 ## Tickets 
 
