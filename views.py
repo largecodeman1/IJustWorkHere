@@ -81,6 +81,9 @@ def base_route():
 @app.route('/')
 def initial():
 	return render_template("initial.html", projects=projects.setup())
+@app.route('/analysis')
+def analysis():
+	return render_template("analysis.html", projects=projects.setup())
 
 @app.route('/logout')
 @login_required
