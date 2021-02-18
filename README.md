@@ -51,6 +51,12 @@ Past
 * Wesley - 25
 * Brandon - 25
 
+2/18/21
+
+1. Link to scrumboard and tickets at the top and here: https://github.com/largecodeman1/IJustWorkHere/projects/1 
+2. https://docs.google.com/document/d/13E1IAy700dugCS4vYhOEkxepcT8rbkOxReJ65N6snI4/edit to show our collegeboard requirements, we are currently working on crossover report issues.
+3. 
+
 ## Tickets 
 
 Past 12/14/20 - 1/11/21
