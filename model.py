@@ -1,3 +1,5 @@
+# Database columns
+
 class Users(db.Model):
     accountId = db.Column(db.text, nullable=False)
     encryptedId = db.Column(db.text, nullable=False)

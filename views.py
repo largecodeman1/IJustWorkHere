@@ -104,19 +104,6 @@ def riot_api_query():
 	if name != "":
 		print(name)
 		Summoner_Id_data = test_transfer_data1(name)
-	#Summoner_Id_data = transfer_data1(name)
-	#Summoner_Id_data = clear_data()
-	#if request.method == 'POST':
-	#	form = request.form
-	#	selection = form['summoner_name']
-	#	if selection == 'psy6':
-	#riotApiData = GetRiotApiData(summoner_name)
-	# Summoner_Id_data = transfer_data1(1)
-	# apiCallStatus = 'This was the result from the server:'
-	# riotApiData = 'This worked!'
-	# riotApiResult = apiCallStatus + riotApiData
-	#		return render_template("riot_api_query.html", Summoner_Id_data = Summoner_Id_data)
-	#	#return redirect(url_for('riot_api_result', riotApiResult=riotApiResult))
 	return render_template("riot_api_query.html", Summoner_Id_data = Summoner_Id_data, name=name)
 
 @app.route('/riot_api_query/<name>', methods=["GET", "POST"])
@@ -127,27 +114,10 @@ def riot_api_query_with_name(name):
 	Summoner_Id_data = clear_data()
 	# POST redirection to content page
 	if name != "":
-		#print(name)
-		#Summoner_Id_data = test_transfer_data1(name)
 		Summoner_Id_data = APIQuery(name)
-		#print(Summoner_Id_data)
 	r = json.dumps(Summoner_Id_data)
 	loaded_r = json.loads(r)
-	#print(r)
 
-	#Summoner_Id_data = transfer_data1(name)
-	#Summoner_Id_data = clear_data()
-	#if request.method == 'POST':
-	#	form = request.form
-	#	selection = form['summoner_name']
-	#	if selection == 'psy6':
-		#riotApiData = GetRiotApiData(summoner_name)
-			# Summoner_Id_data = transfer_data1(1)
-			# apiCallStatus = 'This was the result from the server:'
-			# riotApiData = 'This worked!'
-			# riotApiResult = apiCallStatus + riotApiData
-	#		return render_template("riot_api_query.html", Summoner_Id_data = Summoner_Id_data)
-	#	#return redirect(url_for('riot_api_result', riotApiResult=riotApiResult))
 	return render_template("riot_api_query.html", Summoner_Id_data = loaded_r, name=name)
 
 @app.route('/Easter Egg/')
@@ -155,5 +125,5 @@ def easter_egg_route():
 	return render_template("Egg Easter.html", projects=projects.setup())
 
 if __name__ == "__main__":
-	#runs the application on the repl development server
+	#runs the application on the development server
 	app.run(port='5000', host='127.0.0.1', debug = True)

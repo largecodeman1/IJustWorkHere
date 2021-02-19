@@ -20,7 +20,7 @@ AccountId = 'psy6'
 #
 # NOTE: NEED TO UPDATE THIS EVERY 24 HOURS - Call Zach or create your own account on developer.riotgames.com
 #
-API_Key = "RGAPI-7e388eac-9a63-4976-b676-0584fd1bcfa1"
+API_Key = "RGAPI-521d3c83-5630-483b-8cbc-77d4837880f7"
 
 # Get Riot test data for mid-term and after put into database
 def Riot_Encrypted_Id(AccountId):
@@ -43,7 +43,7 @@ def Riot_Encrypted_Id(AccountId):
     json_object = json.loads(json_data)
 
     """
-    This was painful ... this was the API Key error:
+    This was painful ... this s the API Key error:
 
     {
       "status": {
@@ -94,8 +94,6 @@ def Riot_Matchlist(summoner_accountId):
 
     json_object = json.loads(json_data)
 
-    #JSON_PrettyPrint(json_object)
-
     # NOTE for demo just use the first match we find and get the data for the mid-term
     count = -1
     gameId_list = []
@@ -143,7 +141,7 @@ def Riot_Match_data(summoner_accountId, gameId):
 
     json_data = response.text
     json_object = json.loads(json_data)
-    #JSON_PrettyPrint(json_object)
+
     match_data = {}
     if json_data:
         json_object = json.loads(json_data)
@@ -154,34 +152,22 @@ def Riot_Match_data(summoner_accountId, gameId):
     else:
         return clear_data()
     for participant in json_object['participantIdentities']:
-        #print("participantIdentities:" + str(participant))
-        #print(participant['player']['accountId'])
         if summoner_accountId == participant['player']['accountId']:
             participantId = participant['participantId']
             profileIcon = participant['player']['profileIcon']
-            #goldEarned = participant['player']['goldEarned']
             break
         else:
             continue
-    #print("participantId:" + str(participantId))
+
     for participantId_data in json_object['participants']:
-        #print("Match Id for participant: " + str(participantId_data))
-        #JSON_PrettyPrint(participantId_data)
         if participantId == participantId_data['participantId']:
-            #print("Match Id for participant: " + str(participantId_data))
-            #JSON_PrettyPrint(participantId_data)
+
             championId = int(participantId_data['championId'])
             goldEarned = int(participantId_data['stats']['goldEarned'])
-            #print("championId: " + str(championId))
-            #print("profileIcon: " +str(profileIcon))
-            #print("goldEarned: " +str(goldEarned))
             break
-            #print("profileIcon: " + str(profileIcon))
-            #print("Total Time cc: " + str(totalTimeCrowdControlDealt))
-            #totalTimeCrowdControlDealt = int(participantId_data['totalTimeCrowdControlDealt'])
+
     match_data[gameId] = {'gameId': gameId, 'participantId': participantId, 'championId': championId, 'profileIcon': profileIcon, 'goldEarned': goldEarned}
-    # TDOD Debug code to delete later
-    #result = {'gameId': '3730386044', 'participantId': 6, 'championId': 200, 'goldEarned': 8970}
+
     return(match_data)
 
 # Test function for web development
@@ -194,28 +180,17 @@ def clear_data():
     test = {'gameId': '','participantId': '', 'championId': '', 'profileIcon': '', 'goldEarned': ''}
     return test
 
+    # Default account code
 if __name__ == "__main__":
-    # Test code
-    #AccountId = input("what is the Summoner name: ")
+
     AccountId = 'psy6'
     EncryptedId = Riot_Encrypted_Id(AccountId)
     print(EncryptedId)
     pprint.pprint('EncryptedId:' + EncryptedId)
     gameId_list, match_list_data = Riot_Matchlist(EncryptedId)
-    # pprint.pprint("gameId_list:")
-    # pprint.pprint(gameId_list)
-    # pprint.pprint("match_list_data:")
+
     addPlayer(AccountId, EncryptedId, 'gameId_list')
 
-    # pprint.pprint(match_list_data)
     for gameId in gameId_list:
-        #print("gameId:" + str(gameId))
         match_data = Riot_Match_data(EncryptedId, gameId)
-        #print('match data:' + str(match_data))
         addMatch(gameId, str(match_data))
-
-
-
-
-    # Riot_Match_data(match)
-    # APIQuery(AcountID)
