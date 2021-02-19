@@ -52,6 +52,9 @@ Past
 * Brandon - 25
 
 2/18/21
+1. Ability to clearly review tickets and suggestions 5pts
+2. College Board and Crossover visibility in project 5pts
+3. Mini code Review focus on tickets and project.
 
 1. Link to scrumboard and tickets at the top and here: https://github.com/largecodeman1/IJustWorkHere/projects/1 
 2. https://docs.google.com/document/d/13E1IAy700dugCS4vYhOEkxepcT8rbkOxReJ65N6snI4/edit to show our collegeboard requirements, we are currently working on crossover report issues.
