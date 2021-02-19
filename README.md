@@ -60,40 +60,12 @@ Past
 2. https://docs.google.com/document/d/13E1IAy700dugCS4vYhOEkxepcT8rbkOxReJ65N6snI4/edit to show our collegeboard requirements, we are currently working on crossover report issues. We are currently meeting all of the collegeboard requirements at this point in time, we are working on polishing and making our code more efficent by removing dead code and using more efficent code in our program
 
 ## 3. Report: Total Score: 24/25
-Clone, Run, Code Organization 5/5 pts 
-Code was functional, ran as presented
-Idea, Visuals, HTML, CSS, JS 5/5pts
-Gradient background 
-Nav bar with 3 different links 
-Search bar in the nav bar to search username
-Routes, Model Code & CRUD 5/5pts
-Login works, with required inputs
-Used HTML 5 to create min and max inputs (4-20 for username, 8-20 for password)
-Logout flask routes
-Database for registration and login form 
-Input required for username and password 
-Database for pulling League data
-Have 4 examples of their own stats on the website
-Can pull data based on username
-Gives information on game key, gold earned, champion ID, and an image
-Easter Egg 3/3 pts
-Link from another page to show past work
-Journal
-Test prep
-Linkedin
-Project WOW 1/2 pts
-Pulled data from League API every day
-Working on code to pull new key everyday 
-Photos weren’t working during runtime
-Individual Participation
-Tickets/Completions 2/2 pts
-Scrum Board
-GitHub Heatmap 2 pts
-WOW presence in group 1/1 pt
-Finding username in League and pulling data of games played (able to pull data just from username and using key)
-Recommendations for enhancements
-Make the login and registration form a bit more aesthetically pleasing. The homepage and website is good, but the login/registration form doesn’t have the base extended and is just a white background. 
-Make the search bar more obvious that you are searching for a summoner name (username) rather than just a normal search bar box.
+
+Link to report: https://docs.google.com/document/d/1SqaIoVOVPu1tSyZY4-8suobg2gzMQInMlo7zBMJdOOg/edit?usp=sharing
+
+- Were working on making the login and registration more aesthetically pleasing by adding backgrounds, images, etc
+- weve made it more obvious that the search bar is there for searching up player names, and we moved it to the main page
+- The images not working during the runtime was the fault of the API were taking data from, not our program
 
 ## Tickets 
 
