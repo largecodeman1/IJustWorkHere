@@ -46,10 +46,29 @@ Past
 
 2/5/21
 
-* Aiden - 
-* Zach - 
-* Wesley - 
-* Brandon - 
+* Aiden - 25
+* Zach - 25
+* Wesley - 25
+* Brandon - 25
+
+2/18/21
+
+
+1. Link to scrumboard and tickets at the top and here: https://github.com/largecodeman1/IJustWorkHere/projects/1 
+2. https://docs.google.com/document/d/13E1IAy700dugCS4vYhOEkxepcT8rbkOxReJ65N6snI4/edit to show our collegeboard requirements, we are currently working on crossover report issues. We are currently meeting all of the collegeboard requirements at this point in time, we are working on polishing and making our code more efficent by removing dead code and using more efficent code in our program
+3. Mini code Review focus on tickets and project. See below
+
+
+Define database schema
+
+## Crossover Report:  2/12/21
+
+Link to report: https://docs.google.com/document/d/1SqaIoVOVPu1tSyZY4-8suobg2gzMQInMlo7zBMJdOOg/edit?usp=sharing
+
+Total Score: 24/25
+- Were working on making the login and registration more aesthetically pleasing by adding backgrounds, images, weve extended the background of the base to the other pages, makingthem uniform and more aesthetically pleasing
+- weve made it more obvious that the search bar is there for searching up player names, and we moved it to the main page
+- The images not working during the runtime was the fault of the API were taking data from, not our program, although we will still look into this issue to see if there is any way to pull images from the API in a faster or more efficent way so that we can display the updated images
 
 ## Tickets 
 
@@ -58,7 +77,7 @@ Past 12/14/20 - 1/11/21
 * Aiden - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52772395
           https://github.com/largecodeman1/IJustWorkHere/projects/1#card-51612766
         
-* Zach - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52930789
+* Zach - Error checking for RIOT API - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52930789
          https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52709625
          https://github.com/largecodeman1/IJustWorkHere/projects/1#card-52930817
 
@@ -76,6 +95,7 @@ Present 1/25 - Now
          https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53870542
        
 * Wesley - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53782311
+          https://github.com/largecodeman1/IJustWorkHere/projects/1#card-54357741
 
 * Brandon - https://github.com/largecodeman1/IJustWorkHere/projects/1#card-53869792
 
