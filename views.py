@@ -123,6 +123,21 @@ def riot_api_query_with_name(name):
 
 	return render_template("riot_api_query.html", Summoner_Id_data = loaded_r, name=name)
 
+@app.route('/riot_api_query_search/', methods=["GET", "POST"])
+@login_required
+def riot_api_query_with_name_search():
+	apiCallStatus = ''
+	riotApiResult = ''
+	Summoner_Id_data = clear_data()
+	# POST redirection to content page
+	name = request.args.get('search')
+	if name != "":
+		Summoner_Id_data = APIQuery(name)
+	r = json.dumps(Summoner_Id_data)
+	loaded_r = json.loads(r)
+
+	return render_template("riot_api_query.html", Summoner_Id_data = loaded_r, name=name)
+
 @app.route('/Easter Egg/')
 def easter_egg_route():
 	return render_template("Egg Easter.html", projects=projects.setup())
