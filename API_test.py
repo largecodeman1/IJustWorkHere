@@ -12,7 +12,7 @@ AccountId = 'psy6'
 #
 # NOTE: NEED TO UPDATE THIS EVERY 7 HOURS - Call Zach or create your own account on developer.riotgames.com
 #
-API_Key = "RGAPI-7e388eac-9a63-4976-b676-0584fd1bcfa1"
+API_Key = "RGAPI-411678a5-0d2c-4a77-8f89-793186bdbd6a"
 
 # Get Riot test data for mid-term and after put into database
 def APIQuery(AccountId):
@@ -89,10 +89,6 @@ def APIQuery(AccountId):
         if count > 10:
             break
         gameId = match['gameId']
-    #gameId = json_object['matches'][0]['gameId']
-    #JSON_PrettyPrint(match)
-    #gameId = match['gameId']
-        #print("gameId: " + str(gameId))
 
         base_url = "https://na1.api.riotgames.com/lol/match/v4/matches/"
 
@@ -105,11 +101,8 @@ def APIQuery(AccountId):
 
         json_data = response.text
         json_object = json.loads(json_data)
-        #JSON_PrettyPrint(json_object)
 
         for participant in json_object['participantIdentities']:
-            #print("participantIdentities:" + str(participant))
-            #print(participant['player']['accountId'])
             if summoner_accountId == participant['player']['accountId']:
                 participantId = participant['participantId']
                 profileIcon = participant['player']['profileIcon']
@@ -117,25 +110,14 @@ def APIQuery(AccountId):
                 break
             else:
                 continue
-        #print("participantId:" + str(participantId))
         for participantId_data in json_object['participants']:
-            #print("Match Id for participant: " + str(participantId_data))
-            #JSON_PrettyPrint(participantId_data)
             if participantId == participantId_data['participantId']:
                 #print("Match Id for participant: " + str(participantId_data))
                 #JSON_PrettyPrint(participantId_data)
                 championId = int(participantId_data['championId'])
                 goldEarned = int(participantId_data['stats']['goldEarned'])
-                #print("championId: " + str(championId))
-                #print("profileIcon: " +str(profileIcon))
-                #print("goldEarned: " +str(goldEarned))
                 break
-                #print("profileIcon: " + str(profileIcon))
-                #print("Total Time cc: " + str(totalTimeCrowdControlDealt))
-                #totalTimeCrowdControlDealt = int(participantId_data['totalTimeCrowdControlDealt'])
         result[gameId] = {'gameId': gameId, 'participantId': participantId, 'championId': championId, 'profileIcon': profileIcon, 'goldEarned': goldEarned}
-    # TDOD Debug code to delete later
-    #result = {'gameId': '3730386044', 'participantId': 6, 'championId': 200, 'goldEarned': 8970}
     return(result)
 
 # Test function for web development
@@ -150,7 +132,6 @@ def clear_data():
 
 if __name__ == "__main__":
     # Test code
-    #AccountId = input("what is the Summoner name: ")
     AccountId = 'psy6'
     APIQuery(AcountID)
 

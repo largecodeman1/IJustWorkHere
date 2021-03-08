@@ -41,14 +41,11 @@ def addPlayer(AccountId, EncryptedId, gameId_list):
 def addMatch(MatchId, MatchData):
     match = Matches.query.filter_by(matchId=MatchId).first()
 
-    #return User.query.get(int(user_id))
+    # Error Checking
     if match and match.matchId == MatchId:
         print("Already in the Database")
-        # print('MatchId argument is: ' + str(MatchId))
-        # print('MatchId from query is: ' + str(match.matchId))
     else:
         new_match = Matches(matchId=MatchId, matchData=str(MatchData))
-        # print("Adding New Match: " + str(new_match.matchId))
         db.session.add(new_match)
         db.session.commit()
 
