@@ -1,5 +1,11 @@
 import requests
 import json
+#import urllib.request
+#import re
+
+#search_keyword = "Proguides Tier list"
+#html = urllib.request.urlopen("https://www.youtube.com/results?search_query=" + search_keyword)
+#video_ids = re.findall(r"watch\?v=(\S{11})")
 
 def JSON_PrettyPrint(json_object):
     return print(json.dumps(json_object, indent=2))
