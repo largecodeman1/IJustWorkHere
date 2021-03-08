@@ -10,8 +10,20 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	title:{text:"Stat Comparison from a pro to you"},axisX:{interval: 1},
 	axisY2:{interlacedColor: "rgba(1,77,101,.2)",gridColor: "rgba(1,77,101,.1)",title: "Stats"},
 	data: [{type: "bar",name: "Stats",axisYType: "secondary",color: "#DAA520",dataPoints: [
-			{ y: 3, label: "your gold" },
-			{ y: 7, label: "pro's gold" },
+			{ y: 3, label: "your gold",color: "#DAA520"},
+			{ y: 7, label: "pro's gold",color: "#DAA520" },
+			{ y: 7, label: "your towers taken", color: "#585858"},
+			{ y: 7, label: "pro's towers taken", color: "#585858"},
+			{ y: 7, label: "your amount of deaths in match", color:"#000000"},
+			{ y: 7, label: "pro's amount of deaths in match", color:"#000000"},
+			{ y: 7, label: "your cs", color:"#8000FF"},
+			{ y: 7, label: "pro's cs", color:"#8000FF"},
+			{ y: 7, label: "your damage dealt",color:"#FF0000"},
+			{ y: 7, label: "pro's damage dealt",color:"#FF0000"},
+			{ y: 7, label: "your vision score", color:"#00FF00"},
+			{ y: 7, label: "pro's vision score",color:"#00FF00"},
+			{ y: 7, label: "your total time of cc dealt",color:"#0101DF"},
+			{ y: 7, label: "pro's total time of cc dealt", color:"#0101DF"},
 		]
 	}]
 });
