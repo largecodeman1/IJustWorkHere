@@ -11,7 +11,10 @@ The website to track your progress in League of Legends! Find your game stats fo
 * Sign up and Login in!
 * You're in! now find your username from League of Legends. This should be the name that is displayed when playing LoL (league of legends)
 * Enter the username into the search bar and search!
-* You're done! observe your stats from the last few games played, and improve!
+* Want to find your stats, and how you can improve? enter the analysis page!
+          * Compare your stats to pros, and watch the newest pro guide videos.           
+* You're done! observe your stats from the last few games played, improve, and repeat!
+
 
 ## Scrum Board Cards/Tickets and Deployment Focus
 # https://github.com/largecodeman1/IJustWorkHere/projects/1
