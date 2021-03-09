@@ -109,7 +109,9 @@ ie. http://24.255.211.218:8080/riot_api_query/psy6
 
 
 ## Dependencies
-#pip install each of the following to run the program in intellij
+pip install each of the following to run the program in intellij
+- In the IntelliJ terminal type in "pip3 install "___"
+
 * Flask
 * flask_bootstrap
 * flask_wtf
