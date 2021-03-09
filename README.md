@@ -4,7 +4,7 @@ Link to Scrum Board:
 https://github.com/largecodeman1/IJustWorkHere/projects/1 
 
 ## League Of Legends Stat Tracker
-* The website to track your progress in League of Legends! Find your game stats for your last few games!  
+** The website to track your progress in League of Legends! Find your game stats for your last few games!  
 
 ## Scrum Board Cards/Tickets and Deployment Focus
 # https://github.com/largecodeman1/IJustWorkHere/projects/1
