@@ -4,17 +4,14 @@ Link to Scrum Board:
 https://github.com/largecodeman1/IJustWorkHere/projects/1 
 
 ## League Of Legends Stat Tracker
-* We intend to make a league of legends stat tracker for things important to the game that other sites don't show you. A Crowd control (cc) tracker, gold diff per player, and analysis are just a few functions we intend to add.
+The website to track your progress in League of Legends! Find your game stats for your last few games! 
 
-## CC tracker
-* We want to have a missed/landed CC tracker you can use to see how often you are landing or missing a possibly vital CC (Looking at you Morgana mains). This data will also be used in the analysis function we have. 
-
-## Top Diff? Bot Diff? Jungle Canyon? TRY GOLD DIFF BRONZIE
-* The gold difference between players is a big thing in a league of legends game. There's a reason every time teams get baron in pro play the first thing you see pop up is the gold advantage the team with Baron gets. We intend to show you how much gold you are behind or ahead whether it's the CS gap or getting repeatedly solo killed/killing in lane.
-
-## Growth Analysis
-* A big ticket feature for this project is the growth analysis. Be seeing what you are doing vs a baseline consisting of pros and one-tricks we can tell you how to improve.
-* A big ticket feature for this project is the growth analysis. Be seeing what you are doing vs a baseline consisting of pros and one-tricks we can tell you how to improve.
+# How to use
+* Enter the website through http://leagueofstats.cf:8080
+* Sign up and Login in!
+* You're in! now find your username from League of Legends. This should be the name that is displayed when playing LoL (league of legends)
+* Enter the username into the search bar and search!
+* You're done! observe your stats from the last few games played, and improve!
 
 ## Scrum Board Cards/Tickets and Deployment Focus
 # https://github.com/largecodeman1/IJustWorkHere/projects/1
@@ -117,6 +114,8 @@ ie. http://24.255.211.218:8080/riot_api_query/psy6
 * flask_bootstrap
 * flask_wtf
 * wtforms
+* wtforms.validators
 * flask_sqlalchemy
 * werkzeug.security
 * flask_login
+* json
