@@ -7,6 +7,11 @@ https://github.com/largecodeman1/IJustWorkHere/projects/1
 The website to track your progress in League of Legends! Find your game stats for your last few games! 
 
 # How to use
+* Enter the website through http://leagueofstats.cf:8080
+* Sign up and Login in!
+* You're in! now find your username from League of Legends. This should be the name that is displayed when playing LoL (league of legends)
+* Enter the username into the search bar and search!
+* You're done! observe your stats from the last few games played, and improve!
 
 ## Scrum Board Cards/Tickets and Deployment Focus
 # https://github.com/largecodeman1/IJustWorkHere/projects/1
