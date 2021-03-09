@@ -114,6 +114,8 @@ ie. http://24.255.211.218:8080/riot_api_query/psy6
 * flask_bootstrap
 * flask_wtf
 * wtforms
+* wtforms.validators
 * flask_sqlalchemy
 * werkzeug.security
 * flask_login
+* json
