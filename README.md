@@ -6,7 +6,7 @@ https://github.com/largecodeman1/IJustWorkHere/projects/1
 ## League Of Legends Stat Tracker
 The website to track your progress in League of Legends! Find your game stats for your last few games! 
 
-* How to use
+# How to use
 
 ## Scrum Board Cards/Tickets and Deployment Focus
 # https://github.com/largecodeman1/IJustWorkHere/projects/1
