@@ -23,13 +23,13 @@ Scrum board: https://github.com/largecodeman1/IJustWorkHere/projects/1
 
 ![image](https://user-images.githubusercontent.com/72989414/110564687-2116eb80-8102-11eb-854b-0297edf95d10.png)
 
-## Major Technicals 
-Here are the technicals we made use of throughout tri 2 of CSP
+# Major Technicals 
+Here are the technicals we made use of throughout tri 2 of CSP. (Tech talks and individual research)
 
-# Signup/Login page
+### Signup/Login page
 ![image](https://user-images.githubusercontent.com/72989414/110564324-77375f00-8101-11eb-8dca-67273f3b2c41.png)
 
-The login and signup pages are all located in the views.py file. 
+The login and signup pages are all located in the views.py file. By using WTforms and SQLAlchemy, a simple database, in which user inputed data, is able to be stored and withdrawn from the database. **Wesley**   
 
 
 
