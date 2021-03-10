@@ -24,12 +24,34 @@ Scrum board: https://github.com/largecodeman1/IJustWorkHere/projects/1
 ![image](https://user-images.githubusercontent.com/72989414/110564687-2116eb80-8102-11eb-854b-0297edf95d10.png)
 
 # Major Technicals 
+
 Here are the technicals we made use of throughout tri 2 of CSP. (Tech talks and individual research)
 
 ### Signup/Login page
+
 ![image](https://user-images.githubusercontent.com/72989414/110564324-77375f00-8101-11eb-8dca-67273f3b2c41.png)
 
 The login and signup pages are all located in the views.py file. **Wesley** worked on this by using WTforms and SQLAlchemy. By creating a simple database, in which user inputed data is able to be stored and withdrawn from the database, and the helpful use of wtform logic, the login and signup pages were formed. Along with the login, a logout and login required authethication was integrated to make the site navigatable anywhere. Databases were a huge part of this trimester's goals which were accomplished through this technical.  
+
+### Riot API/data
+
+![image](https://user-images.githubusercontent.com/72989414/110567567-971d5180-8106-11eb-961e-56024aa62542.png)
+
+![image](https://user-images.githubusercontent.com/72989414/110567659-b7e5a700-8106-11eb-940f-9160e85897fc.png)
+
+## Dependencies
+pip install each of the following to run the program in intellij
+- In the IntelliJ terminal type in "pip3 install "___"
+
+* Flask
+* flask_bootstrap
+* flask_wtf
+* wtforms
+* wtforms.validators
+* flask_sqlalchemy
+* werkzeug.security
+* flask_login
+* json
 
 __________________________________________________________________________________________________________________________________________
 ## Scrum Board Cards/Tickets and Deployment Focus
@@ -123,20 +145,3 @@ Present 1/25 - Now
 * For Test Riot Data, utilize the Url and paste in either psy6 or PsychicMaster6 after the initial / to get an example call
 ie. http://24.255.211.218:8080/riot_api_query/psy6
 * Note: Riot API key needs to be updated every 24 hours
-
-
-
-
-## Dependencies
-pip install each of the following to run the program in intellij
-- In the IntelliJ terminal type in "pip3 install "___"
-
-* Flask
-* flask_bootstrap
-* flask_wtf
-* wtforms
-* wtforms.validators
-* flask_sqlalchemy
-* werkzeug.security
-* flask_login
-* json
