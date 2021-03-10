@@ -2,14 +2,13 @@
 
 ## League Of Legends Stat Tracker 
 
-http://leagueofstats.cf:8080
+Website: http://leagueofstats.cf:8080
 
 The website to track your progress in League of Legends! Find your game stats for your last few games! 
 
 Summary: a Stat tracking website (tracks the statistics that are unique to the gameplay) which involves the use of databases, json, flask, html, and css. Users must interact with the website's sign up and login systems to access the main stat tracking function. When in the main page, users are able to interact with the search bar to find any player's performace in the game, allowing you to be able to view your own, and other people's stats! 
 
-# Scrum Board Cards/Tickets and Deployment Focus
-https://github.com/largecodeman1/IJustWorkHere/projects/1
+Scrum board: https://github.com/largecodeman1/IJustWorkHere/projects/1
 
 ![image](https://user-images.githubusercontent.com/72989414/110561461-91227300-80fc-11eb-9c9f-48f9cfcfec26.png)
 
@@ -21,6 +20,17 @@ https://github.com/largecodeman1/IJustWorkHere/projects/1
 * Want to find your stats, and how you can improve? enter the analysis page!
 * Compare your stats to pros, and watch the newest pro guide videos.           
 * You're done! observe your stats from the last few games played, improve, and repeat!
+
+![image](https://user-images.githubusercontent.com/72989414/110564687-2116eb80-8102-11eb-854b-0297edf95d10.png)
+
+## Major Technicals 
+Here are the technicals we made use of throughout tri 2 of CSP
+
+# Signup/Login page
+![image](https://user-images.githubusercontent.com/72989414/110564324-77375f00-8101-11eb-8dca-67273f3b2c41.png)
+
+The login and signup pages are all located in the views.py file. 
+
 
 
 ## Scrum Board Cards/Tickets and Deployment Focus
