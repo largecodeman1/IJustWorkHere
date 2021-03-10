@@ -129,8 +129,8 @@ Define database schema
 Link to report: https://docs.google.com/document/d/1SqaIoVOVPu1tSyZY4-8suobg2gzMQInMlo7zBMJdOOg/edit?usp=sharing
 
 Total Score: 24/25
-- Were working on making the login and registration more aesthetically pleasing by adding backgrounds, images, weve extended the background of the base to the other pages, makingthem uniform and more aesthetically pleasing
-- weve made it more obvious that the search bar is there for searching up player names, and we moved it to the main page
+- We're working on making the login and registration more aesthetically pleasing by adding backgrounds, images, weve extended the background of the base to the other pages, makingthem uniform and more aesthetically pleasing
+- We've made it more obvious that the search bar is there for searching up player names, and we moved it to the main page
 - The images not working during the runtime was the fault of the API were taking data from, not our program, although we will still look into this issue to see if there is any way to pull images from the API in a faster or more efficent way so that we can display the updated images
 
 ## Tickets 
