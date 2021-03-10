@@ -4,11 +4,16 @@
 {% set Summoner_Id_data = Summoner_Id_data %}
 {% set gameId = Summoner_Id_data["gameId"] %}
 {% set participantId = Summoner_Id_data["participantId"] %}
-{% set championId = Summoner_Id_data["championId"] %}
-{% set profileIcon = Summoner_Id_data["profileIcon"] %}
+{% set championId = Summoner_Id_data[matchId].championId  %}
+{% set profileIcon = Summoner_Id_data[matchId].profileIcon %}
 {% set goldEarned = Summoner_Id_data["goldEarned"] %}
 {% set pageTitle = "Stat Comparsion to " ~ name ~ " For match " ~ matchId %}
 {% set goldEarned = Summoner_Id_data[matchId].goldEarned %}
+{% set visionScore = Summoner_Id_data[matchId].visionScore %}
+{% set deaths = Summoner_Id_data[matchId].deaths %}
+{% set kills = Summoner_Id_data[matchId].kills %}
+{% set damageDealtToTurrets = Summoner_Id_data[matchId].damageDealtToTurrets %}
+{% set totalMinionsKilled = Summoner_Id_data[matchId].totalMinionsKilled %}
 
 <html>
 <head>

@@ -128,7 +128,7 @@ def APIQuery(AccountId):
                 damageDealtToTurrets = float(participantId_data['stats']['damageDealtToTurrets'])
                 totalMinionsKilled = int(participantId_data['stats']['totalMinionsKilled'])
                 break
-        result[gameId] = {'gameId': gameId, 'participantId': participantId, 'championId': championId, 'profileIcon': profileIcon, 'goldEarned': goldEarned, 'visionScore': visionScore, 'deaths': deaths, 'kills': kills, 'damageDealtToTurrets': damageDealtToTurrets, 'totalMinionsKilled': totalMinionsKilled, }
+        result[gameId] = {'gameId': gameId, 'participantId': participantId, 'championId': championId, 'profileIcon': profileIcon, 'goldEarned': goldEarned, 'visionScore': visionScore, 'deaths': deaths, 'kills': kills, 'damageDealtToTurrets': damageDealtToTurrets, 'totalMinionsKilled': totalMinionsKilled }
     return(result)
 
 # Test function for web development
