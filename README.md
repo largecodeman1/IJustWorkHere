@@ -2,6 +2,8 @@
 
 ## League Of Legends Stat Tracker
 The website to track your progress in League of Legends! Find your game stats for your last few games! 
+![image](https://user-images.githubusercontent.com/72989414/110561461-91227300-80fc-11eb-9c9f-48f9cfcfec26.png)
+
 
 ## How to use
 * Enter the website through http://leagueofstats.cf:8080
