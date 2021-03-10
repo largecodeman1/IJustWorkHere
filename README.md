@@ -38,7 +38,8 @@ The login and signup code (excluding html) are all located in the views.py file.
 ### Riot API/data
 ![image](https://user-images.githubusercontent.com/70777993/110669705-70503100-8181-11eb-97b4-bb0f702001f6.png)
 
-![image](https://user-images.githubusercontent.com/72989414/110567659-b7e5a700-8106-11eb-940f-9160e85897fc.png)
+![image](https://user-images.githubusercontent.com/70777993/110670982-db4e3780-8182-11eb-94de-de33408c00be.png)
+
 
 The rest API code (excluding html) are located in riot_api.py, views.py, and create_riot_db.py. **Zach** worked on this using json and SQLAlchemy. The rest API used to extract information was the RIOT league of legends api. The database created is able to store the json values extracted from the RIOT game api and sort them until the right type of information can be displayed. The search bar was created by **Aiden** and **Zach** to search through the database and display the right stats on the website.
 
