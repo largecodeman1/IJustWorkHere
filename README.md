@@ -23,7 +23,7 @@ Scrum board: https://github.com/largecodeman1/IJustWorkHere/projects/1
 * Compare your stats to pros, and watch the Proguides videos on how to improve.         
 * You're done! observe your stats from the last few games played, improve, and repeat!
 
-![image](https://user-images.githubusercontent.com/72989414/110564687-2116eb80-8102-11eb-854b-0297edf95d10.png)
+![image](https://user-images.githubusercontent.com/70777993/110672519-8f03f700-8184-11eb-981b-540f86affaff.png)
 
 # Major Technicals 
 
