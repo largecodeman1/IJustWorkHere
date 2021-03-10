@@ -9,6 +9,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 import projects #projects definitions are placed in different file
 from API_test import APIQuery, test_transfer_data1, clear_data
 import json
+from riot_api import Riot_API_Data, Riot_API_Data_By_Match
 
 #import API_test, transfer_data1, APIQuery
 # # https://flask.palletsprojects.com/en/1.1.x/api/
@@ -16,6 +17,9 @@ import json
 app = Flask(__name__)
 app.config['SECRET_KEY']= 'secretkey'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+
 
 bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
@@ -85,8 +89,8 @@ def initial():
 def analysis(name,match):
 	Summoner_Id_data = clear_data()
 	# POST redirection to content page
-	if name != "":
-		Summoner_Id_data = APIQuery(name)
+	if name != "" and match !="":
+		Summoner_Id_data = Riot_API_Data_By_Match(name,int(match))
 	r = json.dumps(Summoner_Id_data)
 	loaded_r = json.loads(r)
 	return render_template("analysis.html", Summoner_Id_data = loaded_r, name=name, match=match)
@@ -123,7 +127,8 @@ def riot_api_query_with_name(name):
 	Summoner_Id_data = clear_data()
 	# POST redirection to content page
 	if name != "":
-		Summoner_Id_data = APIQuery(name)
+		#Summoner_Id_data = APIQuery(name)
+		Summoner_Id_data = Riot_API_Data(name)
 	r = json.dumps(Summoner_Id_data)
 	loaded_r = json.loads(r)
 
@@ -138,7 +143,7 @@ def riot_api_query_with_name_search():
 	# POST redirection to content page
 	name = request.args.get('search')
 	if name != "":
-		Summoner_Id_data = APIQuery(name)
+		Summoner_Id_data = Riot_API_Data(name)
 	r = json.dumps(Summoner_Id_data)
 	loaded_r = json.loads(r)
 

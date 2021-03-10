@@ -4,10 +4,12 @@
 # 3. record AccountId, Match Id, and Encrypted summoner Id
 # 4. Use Match Id to query json
 # 5. record json in data base
-from create_riot_db import app, db, Players, Matches, addPlayer, addMatch
+from create_riot_db import app, db, Players, Matches, addPlayer, addMatch, isEncryptedIdInDB, getEncryptedIdInDB, isRiotMatchDataInDB, getRiotMatchDataInDB
 import requests
 import json
 import pprint
+import sys
+
 
 def JSON_PrettyPrint(json_object):
     return print(json.dumps(json_object, indent=2))
@@ -20,7 +22,7 @@ AccountId = 'psy6'
 #
 # NOTE: NEED TO UPDATE THIS EVERY 24 HOURS - Call Zach or create your own account on developer.riotgames.com
 #
-API_Key = "RGAPI-521d3c83-5630-483b-8cbc-77d4837880f7"
+API_Key = "RGAPI-88772c8a-0f19-43bc-9831-5e55ffbd9277"
 
 # Get Riot test data for mid-term and after put into database
 def Riot_Encrypted_Id(AccountId):
@@ -88,7 +90,7 @@ def Riot_Matchlist(summoner_accountId):
         response = requests.request("GET", url, headers=headers, data=payload)
     except:
         print("Riot_Matchlist: Error with API")
-        return clear_data()
+        return "",clear_data()
 
     json_data = response.text
 
@@ -98,24 +100,36 @@ def Riot_Matchlist(summoner_accountId):
     count = -1
     gameId_list = []
     match_list_data = {}
-    for match in json_object['matches']:
+    try:
+        if json_object['matches']:
+            print("Found it!")
+    except KeyError as e:
+        print("ERROR WITH API: Missing field: {0}".format(e))
+        # Use was is in the DB
+
+        return "",clear_data()
+
+    match_list_data = {}
+    for match_data_single_player in json_object['matches']:
         count+=1
         # stop after 10
         if count > 100:
             break
 
 
-        gameId = match['gameId']
+        gameId = match_data_single_player['gameId']
         gameId_list.append(gameId)
-        timestamp = match['timestamp']
-        lane = match['lane']
+        timestamp = match_data_single_player['timestamp']
+        lane = match_data_single_player['lane']
 
 
-        match_list_data[gameId, 'timestamp'] = timestamp
-        match_list_data[gameId, 'lane'] = lane
-        match_list_data[gameId, 'match_data'] = match
+       # match_list_data[gameId, 'timestamp'] = timestamp
+       # match_list_data[gameId, 'lane'] = lane
+       # match_list_data[gameId, 'match_data'] = match_data_single_player
+        new_data = { 'gameId' : { 'timestamp' : timestamp, 'lane' : lane, 'match_data' : match_data_single_player } }
+        match_list_data.update(new_data)
         #print('count: ' + str(count))
-        #pprint.pprint(match_list)
+#       pprint.pprint(match_list_data)
 
     return gameId_list, match_list_data
 
@@ -140,14 +154,28 @@ def Riot_Match_data(summoner_accountId, gameId):
         return clear_data()
 
     json_data = response.text
-    json_object = json.loads(json_data)
+    #pprint.pprint(json_data)
+
+    return json_data # Match data raw
+
+
+def Riot_Match_data_parse(summoner_accountId, gameId, match_json_data):
 
     match_data = {}
-    if json_data:
-        json_object = json.loads(json_data)
-        if json_object and json_object['participantIdentities']:
-            print()
-        else:
+    if match_json_data:
+        try:
+            json_object = json.loads(match_json_data)
+        except:
+            e = sys.exc_info()[0]
+            print("Error in JSON format: {0}".format(e))
+            return clear_data()
+        try:
+            if json_object and json_object['participantIdentities']:
+                print()
+            else:
+                return clear_data()
+        except KeyError as e:
+            print("SKIPPING: Missing field: {0}".format(e))
             return clear_data()
     else:
         return clear_data()
@@ -184,17 +212,115 @@ def clear_data():
     test = {'gameId': '','participantId': '', 'championId': '', 'profileIcon': '', 'goldEarned': ''}
     return test
 
+def Riot_API_Data(AccountId):
+    # Find Account Id in Database if not get it from the cloud
+    if isEncryptedIdInDB(AccountId):
+        EncryptedId = getEncryptedIdInDB(AccountId)
+    else:
+        EncryptedId = Riot_Encrypted_Id(AccountId)
+
+    if (EncryptedId):
+        # Get latest Riot Data and update DB
+        # TODO: IF API QUERY FAILS JUST USE DB DATA
+        gameId_list, match_list_data = Riot_Matchlist(EncryptedId)
+        test = json.dumps(match_list_data)
+        addPlayer(AccountId, EncryptedId, test)
+
+        return_match_data = {}
+        for gameId in gameId_list:
+            if isRiotMatchDataInDB(gameId):
+                # Found in db
+                match_data = getRiotMatchDataInDB(gameId)
+            else:
+                # get from cloud and store in DB
+                match_data = Riot_Match_data(EncryptedId,gameId)
+                addMatch(gameId, str(match_data))
+            parsed_data = Riot_Match_data_parse(EncryptedId,gameId,match_data)
+            return_match_data.update(parsed_data)
+
+        return return_match_data
+
+    return clear_data()
+
+    return return_data
+
+def Riot_API_Data_By_Match(AccountId,MatchId):
+    # Find Account Id in Database if not get it from the cloud
+    if isEncryptedIdInDB(AccountId):
+        EncryptedId = getEncryptedIdInDB(AccountId)
+    else:
+        EncryptedId = Riot_Encrypted_Id(AccountId)
+
+    if (EncryptedId):
+        # Get latest Riot Data and update DB
+        # TODO: IF API QUERY FAILS JUST USE DB DATA
+        gameId_list, match_list_data = Riot_Matchlist(EncryptedId)
+        test = json.dumps(match_list_data)
+        addPlayer(AccountId, EncryptedId, test)
+
+        return_match_data = {}
+
+        if isRiotMatchDataInDB(MatchId):
+            # Found in db
+            match_data = getRiotMatchDataInDB(MatchId)
+        else:
+            # get from cloud and store in DB
+            match_data = Riot_Match_data(EncryptedId,MatchId)
+            addMatch(MatchId, str(match_data))
+        return_match_data = Riot_Match_data_parse(EncryptedId,MatchId,match_data)
+
+
+        return return_match_data
+
+    return clear_data()
+
+    return return_data
+
+def Riot_API_Data_Get_From_DB(AccountId):
+    EncryptedId = Riot_Encrypted_Id(AccountId)
+    gameId_list, match_list_data = Riot_Matchlist(EncryptedId)
+    gameId_list_str = ','.join(gameId_list)
+    addPlayer(AccountId, EncryptedId, gameId_list_str)
+
+    return_data
+    for gameId in gameId_list:
+        match_data = Riot_Match_data(EncryptedId,gameId)
+        addMatch(gameId, str(match_data))
+        parsed_data = Riot_Match_data_parse(EncryptedId,gameId,match_data)
+        return_data.update(parsed_data)
+
+    return return_data
+
+
+
+
     # Default account code
 if __name__ == "__main__":
 
     AccountId = 'psy6'
-    EncryptedId = Riot_Encrypted_Id(AccountId)
-    print(EncryptedId)
-    pprint.pprint('EncryptedId:' + EncryptedId)
-    gameId_list, match_list_data = Riot_Matchlist(EncryptedId)
+    #AccountId = 'dracus1234567'
+    # EncryptedId = Riot_Encrypted_Id(AccountId)
+    # print(EncryptedId)
+    # pprint.pprint('EncryptedId:' + EncryptedId)
+    # gameId_list, match_list_data = Riot_Matchlist(EncryptedId)
+    # test = json.dumps(match_list_data)
+    # addPlayer(AccountId, EncryptedId, test)
+    #
+    # for gameId in gameId_list:
+    #     match_data = Riot_Match_data(EncryptedId,gameId)
+    #     addMatch(gameId, str(match_data))
+    #     parsed_data = Riot_Match_data_parse(EncryptedId,gameId,match_data)
 
-    addPlayer(AccountId, EncryptedId, 'gameId_list')
+    riot_data = Riot_API_Data(AccountId)
 
-    for gameId in gameId_list:
-        match_data = Riot_Match_data(EncryptedId, gameId)
-        addMatch(gameId, str(match_data))
+    pprint.pprint(riot_data)
+
+    Summoner_Id_data = clear_data()
+    # POST redirection to content page
+    name = AccountId
+    match = 3818324657
+    if name != "":
+        Summoner_Id_data = Riot_API_Data_By_Match(name,match)
+    r = json.dumps(Summoner_Id_data)
+    loaded_r = json.loads(r)
+    pprint.pprint(loaded_r)
