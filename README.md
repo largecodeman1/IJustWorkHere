@@ -29,7 +29,7 @@ Here are the technicals we made use of throughout tri 2 of CSP. (Tech talks and 
 ### Signup/Login page
 ![image](https://user-images.githubusercontent.com/72989414/110564324-77375f00-8101-11eb-8dca-67273f3b2c41.png)
 
-The login and signup pages are all located in the views.py file. **Wesley** created this by using WTforms and SQLAlchemy. By creating a simple database, in which user inputed data is able to be stored and withdrawn from the database, and the helpful use of wtform logic, the login and signup pages were formed. Along with the login, a logout and login required authethication was integrated to make the site navigatable anywhere. Databases were a huge part of this trimester's goals which were accomplished through this technical.  
+The login and signup pages are all located in the views.py file. **Wesley** worked on this by using WTforms and SQLAlchemy. By creating a simple database, in which user inputed data is able to be stored and withdrawn from the database, and the helpful use of wtform logic, the login and signup pages were formed. Along with the login, a logout and login required authethication was integrated to make the site navigatable anywhere. Databases were a huge part of this trimester's goals which were accomplished through this technical.  
 
 
 ## Scrum Board Cards/Tickets and Deployment Focus
