@@ -1,4 +1,15 @@
 <!DOCTYPE HTML>
+{% set nameId = name %}
+{% set matchId = match %}
+{% set Summoner_Id_data = Summoner_Id_data %}
+{% set gameId = Summoner_Id_data["gameId"] %}
+{% set participantId = Summoner_Id_data["participantId"] %}
+{% set championId = Summoner_Id_data["championId"] %}
+{% set profileIcon = Summoner_Id_data["profileIcon"] %}
+{% set goldEarned = Summoner_Id_data["goldEarned"] %}
+{% set pageTitle = "Stat Comparsion to " ~ name ~ " For match " ~ matchId %}
+{% set goldEarned = Summoner_Id_data[matchId].goldEarned %}
+
 <html>
 <head>
 
@@ -8,10 +19,10 @@ window.onload = function () {
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 
-	title:{text:"Stat Comparison from a pro to you"},axisX:{interval: 1},
+	title:{text:"{{pageTitle}}"},axisX:{interval: 1},
 	axisY2:{interlacedColor: "rgba(1,77,101,.2)",gridColor: "rgba(1,77,101,.1)",title: "Stats"},
 	data: [{type: "bar",name: "Stats",axisYType: "secondary",color: "#DAA520",dataPoints: [
-			{ y: 3, label: "your gold",color: "#DAA520"},
+			{ y: {{goldEarned}}, label: "your gold",color: "#DAA520"},
 			{ y: 7, label: "pro's gold",color: "#DAA520" },
 			{ y: 7, label: "your towers taken", color: "#585858"},
 			{ y: 7, label: "pro's towers taken", color: "#585858"},
@@ -29,11 +40,39 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	}]
 });
 chart.render();
+
+var chart = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+
+	title:{text:"Next Data"},axisX:{interval: 1},
+	axisY2:{interlacedColor: "rgba(1,77,101,.2)",gridColor: "rgba(1,77,101,.1)",title: "Stats"},
+	data: [{type: "bar",name: "Stats",axisYType: "secondary",color: "#DAA520",dataPoints: [
+			{ y: {{goldEarned}}, label: "your gold",color: "#DAA520"},
+			{ y: 7, label: "pro's gold",color: "#DAA520" },
+			{ y: 7, label: "your towers taken", color: "#585858"},
+			{ y: 7, label: "pro's towers taken", color: "#585858"},
+			{ y: 7, label: "your amount of deaths in match", color:"#000000"},
+			{ y: 7, label: "pro's amount of deaths in match", color:"#000000"},
+			{ y: 7, label: "your cs", color:"#8000FF"},
+			{ y: 7, label: "pro's cs", color:"#8000FF"},
+			{ y: 7, label: "your damage dealt",color:"#FF0000"},
+			{ y: 7, label: "pro's damage dealt",color:"#FF0000"},
+			{ y: 7, label: "your vision score", color:"#00FF00"},
+			{ y: 7, label: "pro's vision score",color:"#00FF00"},
+			{ y: 7, label: "your total time of cc dealt",color:"#0101DF"},
+			{ y: 7, label: "pro's total time of cc dealt", color:"#0101DF"},
+		]
+	}]
+});
+chart.render();
+
 }
+
 </script>
 </head>
 <body background="https://wallpaperaccess.com/full/340434.png">
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<div id="chartContainer1" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 <body>

@@ -5,7 +5,7 @@
 {% set participantId = Summoner_Id_data["participantId"] %}
 {% set championId = Summoner_Id_data["championId"] %}
 {% set profileIcon = Summoner_Id_data["profileIcon"] %}
-{% set goldEarned = Summoner_Id_data["goldEarned"] %}
+{% set goldEarned = Summoner_Id_data["3813699040"].goldEarned %}
 
 <html>
 <title>RIOT API TEST</title>
@@ -118,16 +118,19 @@ h1, h2, h3, h4, h5, h6 {
                     <th style="text-align:center" scope="col">Champion Id</th>
                     <th style="text-align:center" scope="col">Gold Earned</th>
                     <th style="text-align:center" scope="col">Game Profile Icon</th>
+                    <th style="text-align:center" scope="col">Game Analysis</th>
                 </tr>
                     {% for matchId in Summoner_Id_data %}
                             <tr>
                                 <td>{{nameId}}</td><br>
+                                <td>{{goldEarned}}</td>
                                 <td>{{Summoner_Id_data[matchId].gameId }}</td>
                                 <td>{{Summoner_Id_data[matchId].participantId}}</td>
                                 <td>{{Summoner_Id_data[matchId].championId }}</td>
                                 <td>{{Summoner_Id_data[matchId].goldEarned}}</td>
                                 {% set profileIcon = Summoner_Id_data[matchId].profileIcon %}
                                 <td style="text-align:center"><img src="http://ddragon.leagueoflegends.com/cdn/11.4.1/img/profileicon/{{profileIcon}}.png" alt="" height=100 width=100></td>
+                                <td><a href="/analysis/{{nameId}}/{{Summoner_Id_data[matchId].gameId }}">View Detailed Analysis</a></td>
                             </tr>
                     {% endfor %}
                 </thead>

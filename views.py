@@ -81,9 +81,15 @@ def base_route():
 @app.route('/')
 def initial():
 	return render_template("initial.html", projects=projects.setup())
-@app.route('/analysis')
-def analysis():
-	return render_template("analysis.html", projects=projects.setup())
+@app.route('/analysis/<name>/<match>')
+def analysis(name,match):
+	Summoner_Id_data = clear_data()
+	# POST redirection to content page
+	if name != "":
+		Summoner_Id_data = APIQuery(name)
+	r = json.dumps(Summoner_Id_data)
+	loaded_r = json.loads(r)
+	return render_template("analysis.html", Summoner_Id_data = loaded_r, name=name, match=match)
 
 @app.route('/logout')
 @login_required
