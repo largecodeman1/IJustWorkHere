@@ -107,23 +107,28 @@ chart.render();
 </head>
 <div><title>{{pageTitle}}</title></div>
 <body background="https://wallpaperaccess.com/full/340434.png">
-<div id="chartContainer" style="height: 170px; width: 40%;"></div>
-<div id="chartContainer1" style="height: 170px; width: 40%;"></div>
-<div id="chartContainer2" style="height: 170px; width: 40%;"></div>
-<div id="chartContainer3" style="height: 170px; width: 40%;"></div>
-<div id="chartContainer4" style="height: 170px; width: 40%;"></div>
-<div id="chartContainer5" style="height: 170px; width: 40%;"></div>
+<div id="chartContainer" style="height: 170px; width: 50%;"></div>
+<div id="chartContainer1" style="height: 170px; width: 50%;"></div>
+<div id="chartContainer2" style="height: 170px; width: 50%;"></div>
+<div id="chartContainer3" style="height: 170px; width: 50%;"></div>
+<div id="chartContainer4" style="height: 170px; width: 50%;"></div>
+<div id="chartContainer5" style="height: 170px; width: 50%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 <body>
 
 <!--Video section-->
 <div>
-<iframe width="365" height="225" src="https://www.youtube.com/embed/9JBZhnTR3M0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="365" height="225" src="https://www.youtube.com/embed/RE62wpaBwO8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="365" height="225" src="https://www.youtube.com/embed/Amq5Cv0WDA0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="365" height="225" src="https://www.youtube.com/embed/kF_ybEWi-TM" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="365" height="225" src="https://www.youtube.com/embed/UuT44kGPvtU" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="365" height="200" style="position:absolute; TOP:7px; LEFT:955px" src="https://www.youtube.com/embed/9JBZhnTR3M0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="365" height="200" style="position:absolute; TOP:213px; LEFT:955px" src="https://www.youtube.com/embed/RE62wpaBwO8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="365" height="200" style="position:absolute; TOP:420px; LEFT:955px" src="https://www.youtube.com/embed/Amq5Cv0WDA0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="365" height="200" style="position:absolute; TOP:625px; LEFT:955px" src="https://www.youtube.com/embed/kF_ybEWi-TM" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="365" height="200" style="position:absolute; TOP:825px; LEFT:955px" src="https://www.youtube.com/embed/UuT44kGPvtU" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h1 style="position:absolute; TOP:7px; LEFT:1350px">Mid</h1>
+    <h1 style="position:absolute; TOP:213px; LEFT:1350px">Jungle</h1>
+    <h1 style="position:absolute; TOP:420px; LEFT:1350px">Support</h1>
+    <h1 style="position:absolute; TOP:625px; LEFT:1350px">ADC</h1>
+    <h1 style="position:absolute; TOP:825px; LEFT:1350px">Top</h1>
 </div>
 
 <div id="wrapper">
@@ -175,6 +180,13 @@ chart.render();
         <div style = "position:absolute; left:1800px; top:20px">
             <a href="/logout" class="w3-bar-item w3-button">Logout</a>
         </div>
+        <div class="wrap">
+            <div style="position:absolute; TOP:50px; LEFT:1600px">
+                <form action="/riot_api_query_search/" target="_blank" method="get">
+                    <input type="text" placeholder="Search for your account.." name="search" style="width: 200px; height: 50px">
+                    <button type="submit"><img src="https://www.pngkey.com/png/full/87-872246_cropped-lupa-small-search-button-icon.png" width="40" height="35">
+                </form>
+            </div>
 </div>
 </body>
 </html>
