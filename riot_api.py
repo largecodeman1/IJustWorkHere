@@ -70,7 +70,7 @@ def Riot_Encrypted_Id(AccountId):
         print("Error with API ... Probably BAD AccountId")
         data = clear_data()
         data['gameId'] = f"ERROR: I think you may have fat fingered the username: \"{AccountId}\" ...  TRY AGAIN!"
-        return data
+        return False
 
     # Use account number to get all the matches player was ever in, could be ton
     summoner_accountId = json_object['accountId']
@@ -113,7 +113,7 @@ def Riot_Matchlist(summoner_accountId):
     for match_data_single_player in json_object['matches']:
         count+=1
         # stop after 10
-        if count > 100:
+        if count > 10:
             break
 
 
@@ -240,9 +240,11 @@ def Riot_API_Data(AccountId):
 
         return return_match_data
 
-    return clear_data()
+    return_match_data = clear_data()
 
-    return return_data
+    return_match_data['gameId'] = f"ERROR: I think you may have fat fingered the username: \"{AccountId}\" ...  TRY AGAIN!"
+
+    return return_match_data
 
 def Riot_API_Data_By_Match(AccountId,MatchId):
     # Find Account Id in Database if not get it from the cloud

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 {% set nameId = name %}
 {% set Summoner_Id_data = Summoner_Id_data %}
-{% set gameId = Summoner_Id_data["gameId"] %}
+{% set errorId = Summoner_Id_data.gameId %}
 {% set participantId = Summoner_Id_data["participantId"] %}
 {% set championId = Summoner_Id_data["championId"] %}
 {% set profileIcon = Summoner_Id_data["profileIcon"] %}
 {% set goldEarned = Summoner_Id_data["goldEarned"] %}
+
 
 <html>
 <title>RIOT API TEST</title>
@@ -65,7 +66,6 @@ h1, h2, h3, h4, h5, h6 {
 <!--        <h1 class="w3-xxlarge">RIOT API EXAMPLE: (try psy6)</h1>-->
     </div>
 </header>
-
 <html>
 <div><p>RIOT API QUERY EXAMPLE: </p></div>
 <div>
@@ -90,19 +90,20 @@ h1, h2, h3, h4, h5, h6 {
     </table>
 </div>
 <body>
-<body background="https://wallpaperaccess.com/full/340434.png">
+<!--<body background="https://wallpaperaccess.com/full/340434.png">-->
 <form  method = "post" action="/riot_api_result">
     <h3>Result Search from Server:</h3>
+    <h3>{{errorId}}</h3>
 </form>
 <!--{{Summoner_Id_data}}-->
 </body>
-<body background="https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555276986/shape/mentalfloss/mizu.png?itok=seYBGPIV">
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=1024">
-        <title>Example 01: No CSS</title>
-    </head>
+<!--<body background="https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555276986/shape/mentalfloss/mizu.png?itok=seYBGPIV">-->
+<!--    <html lang="en">-->
+<!--    <head>-->
+<!--        <meta charset="utf-8">-->
+<!--        <meta name="viewport" content="width=1024">-->
+<!--        <title>Example 01: No CSS</title>-->
+<!--    </head>-->
 
     <body>
     <div id="wrapper">
@@ -123,9 +124,9 @@ h1, h2, h3, h4, h5, h6 {
                     {% for matchId in Summoner_Id_data %}
                             <tr>
                                 <td>{{nameId}}</td><br>
-                                <td>{{Summoner_Id_data[matchId].gameId }}</td>
+                                <td>{{Summoner_Id_data[matchId].gameId}}</td>
                                 <td>{{Summoner_Id_data[matchId].participantId}}</td>
-                                <td>{{Summoner_Id_data[matchId].championId }}</td>
+                                <td>{{Summoner_Id_data[matchId].championId}}</td>
                                 <td>{{Summoner_Id_data[matchId].goldEarned}}</td>
                                 {% set profileIcon = Summoner_Id_data[matchId].profileIcon %}
                                 <td style="text-align:center"><img src="http://ddragon.leagueoflegends.com/cdn/11.4.1/img/profileicon/{{profileIcon}}.png" alt="" height=100 width=100></td>
