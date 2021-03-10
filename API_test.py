@@ -122,8 +122,13 @@ def APIQuery(AccountId):
                 #JSON_PrettyPrint(participantId_data)
                 championId = int(participantId_data['championId'])
                 goldEarned = int(participantId_data['stats']['goldEarned'])
+                visionScore = float(participantId_data['stats']['visionScore'])
+                deaths = int(participantId_data['stats']['deaths'])
+                kills = int(participantId_data['stats']['kills'])
+                damageDealtToTurrets = float(participantId_data['stats']['damageDealtToTurrets'])
+                totalMinionsKilled = int(participantId_data['stats']['totalMinionsKilled'])
                 break
-        result[gameId] = {'gameId': gameId, 'participantId': participantId, 'championId': championId, 'profileIcon': profileIcon, 'goldEarned': goldEarned}
+        result[gameId] = {'gameId': gameId, 'participantId': participantId, 'championId': championId, 'profileIcon': profileIcon, 'goldEarned': goldEarned, 'visionScore': visionScore, 'deaths': deaths, 'kills': kills, 'damageDealtToTurrets': damageDealtToTurrets, 'totalMinionsKilled': totalMinionsKilled, }
     return(result)
 
 # Test function for web development
