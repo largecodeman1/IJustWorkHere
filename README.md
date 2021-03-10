@@ -39,7 +39,15 @@ The login and signup code (excluding html) are all located in the views.py file.
 
 ![image](https://user-images.githubusercontent.com/72989414/110567659-b7e5a700-8106-11eb-940f-9160e85897fc.png)
 
-The rest API code (excluding html) are located in riot_api.py, views.py, and create_riot_db.py. **Zach** worked on this using json and SQLAlchemy. The rest API used in within this website was the RIOT league of legends api. The database created is able to store the json values extracted from the RIOT game api. Zach makes use of this data by sorting through the  
+The rest API code (excluding html) are located in riot_api.py, views.py, and create_riot_db.py. **Zach** worked on this using json and SQLAlchemy. The rest API used to extract information was the RIOT league of legends api. The database created is able to store the json values extracted from the RIOT game api and sort them until the right type of information can be displayed. The search bar was created by **Aiden** and **Zach** to search through the database and display the right stats on the website.
+
+### Frontend/HTML/CSS
+
+![image](https://user-images.githubusercontent.com/72989414/110570793-5b38bb00-810b-11eb-918f-43c3a7a27bbe.png)
+
+![image](https://user-images.githubusercontent.com/72989414/110570850-7277a880-810b-11eb-8cd2-756d7f5d4737.png)
+
+All the HTML and CSS can be found in the static and templates folder. **Brandon** and **Aiden** were the ones who worked on this part of the project. From the embeding of videos and images, to the navigation bar, Brandon and Aiden worked together to get the backend and frontend linked together. They helped design the buttons and pages to display certain stats and pieces of information to help guide users into the website.
 
 ## Dependencies
 pip install each of the following to run the program in intellij
