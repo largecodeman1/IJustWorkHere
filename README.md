@@ -15,7 +15,7 @@ Scrum board: https://github.com/largecodeman1/IJustWorkHere/projects/1
 ## How to use
 * Enter the website through http://leagueofstats.cf:8080
 * Sign up and Login in!
-* You're in! now find your username from League of Legends. This should be the name that is displayed when playing LoL (league of legends)
+* You're in! now find your username from League of Legends. This should be the name that is displayed when playing LoL (league of legends). If you don't have a League account and want to test, use the username "psy6"
 * Enter the username into the search bar and search!
 * Want to find your stats, and how you can improve? enter the analysis page!
 * Compare your stats to pros, and watch the newest pro guide videos.           
