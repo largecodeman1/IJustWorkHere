@@ -36,8 +36,7 @@ Here are the technicals we made use of throughout tri 2 of CSP. (Tech talks and 
 The login and signup code (excluding html) are all located in the views.py file. **Wesley** worked on this by using WTforms and SQLAlchemy. By creating a simple database, in which user inputed data is able to be stored and withdrawn from the database, and the helpful use of wtform logic, the login and signup pages were formed. Along with the login, a logout and login required authethication was integrated to make the site navigatable anywhere. Databases were a huge part of this trimester's goals which were accomplished through this technical.  
 
 ### Riot API/data
-
-![image](https://user-images.githubusercontent.com/72989414/110568831-8077fa00-8108-11eb-84d0-5ce160c12c8a.png)
+![image](https://user-images.githubusercontent.com/70777993/110669705-70503100-8181-11eb-97b4-bb0f702001f6.png)
 
 ![image](https://user-images.githubusercontent.com/72989414/110567659-b7e5a700-8106-11eb-940f-9160e85897fc.png)
 
