@@ -5,7 +5,7 @@
 {% set participantId = Summoner_Id_data["participantId"] %}
 {% set championId = Summoner_Id_data["championId"] %}
 {% set profileIcon = Summoner_Id_data["profileIcon"] %}
-{% set goldEarned = Summoner_Id_data["3813699040"].goldEarned %}
+{% set goldEarned = Summoner_Id_data["goldEarned"] %}
 
 <html>
 <title>RIOT API TEST</title>
@@ -123,7 +123,6 @@ h1, h2, h3, h4, h5, h6 {
                     {% for matchId in Summoner_Id_data %}
                             <tr>
                                 <td>{{nameId}}</td><br>
-                                <td>{{goldEarned}}</td>
                                 <td>{{Summoner_Id_data[matchId].gameId }}</td>
                                 <td>{{Summoner_Id_data[matchId].participantId}}</td>
                                 <td>{{Summoner_Id_data[matchId].championId }}</td>
