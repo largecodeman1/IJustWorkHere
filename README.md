@@ -6,6 +6,8 @@ http://leagueofstats.cf:8080
 
 The website to track your progress in League of Legends! Find your game stats for your last few games! 
 
+Summary: a Stat tracking website (tracks the statistics that are unique to the gameplay) which involves the use of databases, json, flask, html, and css. Users must interact with the website's sign up and login systems to access the main stat tracking function. When in the main page, users are able to interact with the search bar to find any player's performace in the game, allowing you to be able to view your own, and other people's stats! 
+
 # Scrum Board Cards/Tickets and Deployment Focus
 https://github.com/largecodeman1/IJustWorkHere/projects/1
 
