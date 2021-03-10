@@ -2,12 +2,9 @@
 {% set nameId = name %}
 {% set matchId = match %}
 {% set Summoner_Id_data = Summoner_Id_data %}
-{% set gameId = Summoner_Id_data["gameId"] %}
-{% set participantId = Summoner_Id_data["participantId"] %}
 {% set championId = Summoner_Id_data[matchId].championId  %}
 {% set profileIcon = Summoner_Id_data[matchId].profileIcon %}
-{% set goldEarned = Summoner_Id_data["goldEarned"] %}
-{% set pageTitle = "Stat Comparsion to " ~ name ~ " For match " ~ matchId %}
+{% set pageTitle = "Stats Comparsion to " ~ name ~ " For match " ~ matchId %}
 {% set goldEarned = Summoner_Id_data[matchId].goldEarned %}
 {% set visionScore = Summoner_Id_data[matchId].visionScore %}
 {% set deaths = Summoner_Id_data[matchId].deaths %}
@@ -16,6 +13,7 @@
 {% set totalMinionsKilled = Summoner_Id_data[matchId].totalMinionsKilled %}
 
 <html>
+
 <head>
 
     <script>
@@ -24,23 +22,11 @@ window.onload = function () {
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 
-	title:{text:"{{pageTitle}}"},axisX:{interval: 1},
+	title:{text:"Gold Comparsion"},axisX:{interval: 1},
 	axisY2:{interlacedColor: "rgba(1,77,101,.2)",gridColor: "rgba(1,77,101,.1)",title: "Stats"},
 	data: [{type: "bar",name: "Stats",axisYType: "secondary",color: "#DAA520",dataPoints: [
-			{ y: {{goldEarned}}, label: "your gold",color: "#DAA520"},
-			{ y: 7, label: "pro's gold",color: "#DAA520" },
-			{ y: 7, label: "your towers taken", color: "#585858"},
-			{ y: 7, label: "pro's towers taken", color: "#585858"},
-			{ y: 7, label: "your amount of deaths in match", color:"#000000"},
-			{ y: 7, label: "pro's amount of deaths in match", color:"#000000"},
-			{ y: 7, label: "your cs", color:"#8000FF"},
-			{ y: 7, label: "pro's cs", color:"#8000FF"},
-			{ y: 7, label: "your damage dealt",color:"#FF0000"},
-			{ y: 7, label: "pro's damage dealt",color:"#FF0000"},
-			{ y: 7, label: "your vision score", color:"#00FF00"},
-			{ y: 7, label: "pro's vision score",color:"#00FF00"},
-			{ y: 7, label: "your total time of cc dealt",color:"#0101DF"},
-			{ y: 7, label: "pro's total time of cc dealt", color:"#0101DF"},
+			{ y: {{goldEarned}}, label: "your's",color: "#DAA520"},
+			{ y: 11151, label: "pro's",color: "#DAA520" },
 		]
 	}]
 });
@@ -49,46 +35,95 @@ chart.render();
 var chart = new CanvasJS.Chart("chartContainer1", {
 	animationEnabled: true,
 
-	title:{text:"Next Data"},axisX:{interval: 1},
+	title:{text:"Turret Damage"},axisX:{interval: 1},
 	axisY2:{interlacedColor: "rgba(1,77,101,.2)",gridColor: "rgba(1,77,101,.1)",title: "Stats"},
 	data: [{type: "bar",name: "Stats",axisYType: "secondary",color: "#DAA520",dataPoints: [
-			{ y: {{goldEarned}}, label: "your gold",color: "#DAA520"},
-			{ y: 7, label: "pro's gold",color: "#DAA520" },
-			{ y: 7, label: "your towers taken", color: "#585858"},
-			{ y: 7, label: "pro's towers taken", color: "#585858"},
-			{ y: 7, label: "your amount of deaths in match", color:"#000000"},
-			{ y: 7, label: "pro's amount of deaths in match", color:"#000000"},
-			{ y: 7, label: "your cs", color:"#8000FF"},
-			{ y: 7, label: "pro's cs", color:"#8000FF"},
-			{ y: 7, label: "your damage dealt",color:"#FF0000"},
-			{ y: 7, label: "pro's damage dealt",color:"#FF0000"},
-			{ y: 7, label: "your vision score", color:"#00FF00"},
-			{ y: 7, label: "pro's vision score",color:"#00FF00"},
-			{ y: 7, label: "your total time of cc dealt",color:"#0101DF"},
-			{ y: 7, label: "pro's total time of cc dealt", color:"#0101DF"},
+			{ y: {{damageDealtToTurrets}}, label: "your's",color: "#DAA520"},
+			{ y: 33200, label: "pro's",color: "#DAA520" },
 		]
 	}]
 });
 chart.render();
 
+var chart = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+
+	title:{text:"Vision Score"},axisX:{interval: 1},
+	axisY2:{interlacedColor: "rgba(1,77,101,.2)",gridColor: "rgba(1,77,101,.1)",title: "Stats"},
+	data: [{type: "bar",name: "Stats",axisYType: "secondary",color: "#DAA520",dataPoints: [
+			{ y: {{visionScore}}, label: "your's",color: "#DAA520"},
+			{ y: 70, label: "pro's",color: "#DAA520" },
+		]
+	}]
+});
+chart.render();
+
+var chart = new CanvasJS.Chart("chartContainer3", {
+	animationEnabled: true,
+
+	title:{text:"Deaths"},axisX:{interval: 1},
+	axisY2:{interlacedColor: "rgba(1,77,101,.2)",gridColor: "rgba(1,77,101,.1)",title: "Stats"},
+	data: [{type: "bar",name: "Stats",axisYType: "secondary",color: "#DAA520",dataPoints: [
+			{ y: {{deaths}}, label: "your's",color: "#DAA520"},
+			{ y: 2, label: "pro's",color: "#DAA520" },
+		]
+	}]
+});
+chart.render();
+
+
+var chart = new CanvasJS.Chart("chartContainer4", {
+	animationEnabled: true,
+
+	title:{text:"Kills"},axisX:{interval: 1},
+	axisY2:{interlacedColor: "rgba(1,77,101,.2)",gridColor: "rgba(1,77,101,.1)",title: "Stats"},
+	data: [{type: "bar",name: "Stats",axisYType: "secondary",color: "#DAA520",dataPoints: [
+			{ y: {{kills}}, label: "your's",color: "#DAA520"},
+			{ y: 10, label: "pro's",color: "#DAA520" },
+		]
+	}]
+});
+chart.render();
+
+var chart = new CanvasJS.Chart("chartContainer5", {
+	animationEnabled: true,
+
+	title:{text:"Total Minions Killed (CREEPS SLAYEN AKA CS)"},axisX:{interval: 1},
+	axisY2:{interlacedColor: "rgba(1,77,101,.2)",gridColor: "rgba(1,77,101,.1)",title: "Stats"},
+	data: [{type: "bar",name: "Stats",axisYType: "secondary",color: "#DAA520",dataPoints: [
+			{ y: {{totalMinionsKilled}}, label: "your's",color: "#DAA520"},
+			{ y: 113, label: "pro's",color: "#DAA520" },
+		]
+	}]
+});
+chart.render();
+
+
 }
+
+
 
 </script>
 </head>
+<div><title>{{pageTitle}}</title></div>
 <body background="https://wallpaperaccess.com/full/340434.png">
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<div id="chartContainer1" style="height: 370px; width: 100%;"></div>
+<div id="chartContainer" style="height: 170px; width: 40%;"></div>
+<div id="chartContainer1" style="height: 170px; width: 40%;"></div>
+<div id="chartContainer2" style="height: 170px; width: 40%;"></div>
+<div id="chartContainer3" style="height: 170px; width: 40%;"></div>
+<div id="chartContainer4" style="height: 170px; width: 40%;"></div>
+<div id="chartContainer5" style="height: 170px; width: 40%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 <body>
 
 <!--Video section-->
 <div>
-<iframe width="372" height="225" src="https://www.youtube.com/embed/9JBZhnTR3M0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="372" height="225" src="https://www.youtube.com/embed/RE62wpaBwO8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="372" height="225" src="https://www.youtube.com/embed/Amq5Cv0WDA0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="372" height="225" src="https://www.youtube.com/embed/kF_ybEWi-TM" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="372" height="225" src="https://www.youtube.com/embed/UuT44kGPvtU" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="365" height="225" src="https://www.youtube.com/embed/9JBZhnTR3M0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="365" height="225" src="https://www.youtube.com/embed/RE62wpaBwO8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="365" height="225" src="https://www.youtube.com/embed/Amq5Cv0WDA0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="365" height="225" src="https://www.youtube.com/embed/kF_ybEWi-TM" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="365" height="225" src="https://www.youtube.com/embed/UuT44kGPvtU" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <div id="wrapper">
@@ -99,35 +134,32 @@ chart.render();
             <thead>
             <tr>
                 <td>&nbsp;</td>
-                <th scope="col">gold</th>
-                <th scope="col">cs</th>
-                <th scope="col">towers taken</th>
-                <th scope="col">damage dealt</th>
-                <th scope="col">total cc dealt</th>
-                <th scope="col">vision score</th>
-                <th scope="col">total deaths</th>
+                <th scope="col">Gold</th>
+                <th scope="col">Turret Damage</th>
+                <th scope="col">Vision Score</th>
+                <th scope="col">Deaths</th>
+                <th scope="col">Kills</th>
+                <th scope="col">CS</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <th scope="row">You</th>
-                <td>4080</td>
-                <td>6080</td>
-                <td>6240</td>
-                <td>3520</td>
-                <td>2240</td>
-                <td></td>
-                <td></td>
+                <td>{{goldEarned}}</td>
+                <td>{{damageDealtToTurrets}}</td>
+                <td>{{visionScore}}</td>
+                <td>{{deaths}}</td>
+                <td>{{kills}}</td>
+                <td>{{totalMinionsKilled}}</td>
             </tr>
             <tr>
                 <th scope="row">Pro</th>
-                <td>5680</td>
-                <td>6880</td>
-                <td>6240</td>
-                <td>5120</td>
-                <td>2640</td>
-                <td></td>
-                <td></td>
+                <td>11151</td>
+                <td>33200</td>
+                <td>70</td>
+                <td>2</td>
+                <td>10</td>
+                <td>113</td>
             </tr>
             </tbody>
         </table>
