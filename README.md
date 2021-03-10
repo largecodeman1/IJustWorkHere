@@ -1,12 +1,9 @@
 # IJustWorkHere
 
-Link to Scrum Board:
-https://github.com/largecodeman1/IJustWorkHere/projects/1 
-
 ## League Of Legends Stat Tracker
 The website to track your progress in League of Legends! Find your game stats for your last few games! 
 
-# How to use
+## How to use
 * Enter the website through http://leagueofstats.cf:8080
 * Sign up and Login in!
 * You're in! now find your username from League of Legends. This should be the name that is displayed when playing LoL (league of legends)
