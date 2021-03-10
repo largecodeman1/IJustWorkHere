@@ -20,7 +20,7 @@ Scrum board: https://github.com/largecodeman1/IJustWorkHere/projects/1
 * You're in! now find your username from League of Legends. This should be the name that is displayed when playing LoL (league of legends). If you don't have a League account and want to test, use the username "psy6"
 * Enter the username into the search bar and search!
 * Want to find your stats, and how you can improve? enter the analysis page!
-* Compare your stats to pros, and watch the newest pro guide videos.           
+* Compare your stats to pros, and watch the Proguides videos on how to improve.         
 * You're done! observe your stats from the last few games played, improve, and repeat!
 
 ![image](https://user-images.githubusercontent.com/72989414/110564687-2116eb80-8102-11eb-854b-0297edf95d10.png)
