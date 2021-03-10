@@ -31,13 +31,15 @@ Here are the technicals we made use of throughout tri 2 of CSP. (Tech talks and 
 
 ![image](https://user-images.githubusercontent.com/72989414/110564324-77375f00-8101-11eb-8dca-67273f3b2c41.png)
 
-The login and signup pages are all located in the views.py file. **Wesley** worked on this by using WTforms and SQLAlchemy. By creating a simple database, in which user inputed data is able to be stored and withdrawn from the database, and the helpful use of wtform logic, the login and signup pages were formed. Along with the login, a logout and login required authethication was integrated to make the site navigatable anywhere. Databases were a huge part of this trimester's goals which were accomplished through this technical.  
+The login and signup code (excluding html) are all located in the views.py file. **Wesley** worked on this by using WTforms and SQLAlchemy. By creating a simple database, in which user inputed data is able to be stored and withdrawn from the database, and the helpful use of wtform logic, the login and signup pages were formed. Along with the login, a logout and login required authethication was integrated to make the site navigatable anywhere. Databases were a huge part of this trimester's goals which were accomplished through this technical.  
 
 ### Riot API/data
 
-![image](https://user-images.githubusercontent.com/72989414/110567567-971d5180-8106-11eb-961e-56024aa62542.png)
+![image](https://user-images.githubusercontent.com/72989414/110568831-8077fa00-8108-11eb-84d0-5ce160c12c8a.png)
 
 ![image](https://user-images.githubusercontent.com/72989414/110567659-b7e5a700-8106-11eb-940f-9160e85897fc.png)
+
+The rest API code (excluding html) are located in riot_api.py, views.py, and create_riot_db.py. **Zach** worked on this using json and SQLAlchemy. The rest API used in within this website was the RIOT league of legends api. The database created is able to store the json values extracted from the RIOT game api. Zach makes use of this data by sorting through the  
 
 ## Dependencies
 pip install each of the following to run the program in intellij
