@@ -20,10 +20,10 @@ Scrum board: https://github.com/largecodeman1/IJustWorkHere/projects/1
 * You're in! now find your username from League of Legends. This should be the name that is displayed when playing LoL (league of legends). If you don't have a League account and want to test, use the username "psy6"
 * Enter the username into the search bar and search!
 * Want to find your stats, and how you can improve? enter the analysis page!
-* Compare your stats to pros, and watch the newest pro guide videos.           
+* Compare your stats to pros, and watch the Proguides videos on how to improve.         
 * You're done! observe your stats from the last few games played, improve, and repeat!
 
-![image](https://user-images.githubusercontent.com/72989414/110564687-2116eb80-8102-11eb-854b-0297edf95d10.png)
+![image](https://user-images.githubusercontent.com/70777993/110672519-8f03f700-8184-11eb-981b-540f86affaff.png)
 
 # Major Technicals 
 
@@ -33,14 +33,25 @@ Here are the technicals we made use of throughout tri 2 of CSP. (Tech talks and 
 
 ![image](https://user-images.githubusercontent.com/72989414/110564324-77375f00-8101-11eb-8dca-67273f3b2c41.png)
 
-The login and signup code (excluding html) are all located in the views.py file. **Wesley** worked on this by using WTforms and SQLAlchemy. By creating a simple database, in which user inputed data is able to be stored and withdrawn from the database, and the helpful use of wtform logic, the login and signup pages were formed. Along with the login, a logout and login required authethication was integrated to make the site navigatable anywhere. Databases were a huge part of this trimester's goals which were accomplished through this technical.  
+The login and signup code (excluding html) are all located in the views.py file. 
+- **Wesley** worked on this by using WTforms and SQLAlchemy.
+- By creating a simple database, in which user inputed data is able to be stored and withdrawn from the database, and the helpful use of wtform logic, the login and signup pages were formed. 
+- Along with the login, a logout and login required authethication was integrated to make the site navigatable anywhere. 
+- Databases were a huge part of this trimester's goals which were accomplished through this technical.  
 
 ### Riot API/data
 ![image](https://user-images.githubusercontent.com/70777993/110669705-70503100-8181-11eb-97b4-bb0f702001f6.png)
 
-![image](https://user-images.githubusercontent.com/72989414/110567659-b7e5a700-8106-11eb-940f-9160e85897fc.png)
+![image](https://user-images.githubusercontent.com/70777993/110670982-db4e3780-8182-11eb-94de-de33408c00be.png)
 
-The rest API code (excluding html) are located in riot_api.py, views.py, and create_riot_db.py. **Zach** worked on this using json and SQLAlchemy. The rest API used to extract information was the RIOT league of legends api. The database created is able to store the json values extracted from the RIOT game api and sort them until the right type of information can be displayed. The search bar was created by **Aiden** and **Zach** to search through the database and display the right stats on the website.
+
+The rest API code (excluding html) are located in riot_api.py, views.py, and create_riot_db.py. 
+- **Zach** worked on this using json and SQLAlchemy. The rest API used to extract information was the RIOT league of legends api. 
+- The database created is able to store the json values extracted from the RIOT game api and sort them until the right type of information can be displayed. 
+- The search bar was created by **Aiden** and **Zach** to search through the database and display the right stats on the website.
+- - The search engine checks the database first for the data instead of querying the API for speed. 
+- Database Query takes 3 seconds
+- Pulling from the Rest API can take 5-20 seconds
 
 ### Frontend/HTML/CSS
 
@@ -48,7 +59,10 @@ The rest API code (excluding html) are located in riot_api.py, views.py, and cre
 
 ![image](https://user-images.githubusercontent.com/72989414/110570850-7277a880-810b-11eb-8cd2-756d7f5d4737.png)
 
-All the HTML and CSS can be found in the static and templates folder. **Brandon** and **Aiden** were the ones who worked on this part of the project. From the embeding of videos and images, to the navigation bar, Brandon and Aiden worked together to get the backend and frontend linked together. They helped design the buttons and pages to display certain stats and pieces of information to help guide users into the website.
+All the HTML and CSS can be found in the static and templates folder. 
+- **Brandon** and **Aiden** were the ones who worked on this part of the project. 
+- From the embeding of videos and images, to the navigation bar, Brandon and Aiden worked together to get the backend and frontend linked together. 
+- They helped design the buttons and pages to display certain stats and pieces of information to help guide users into the website.
 
 ## Dependencies
 pip install each of the following to run the program in intellij
@@ -110,13 +124,13 @@ Past
 
 Define database schema
 
-## Crossover Report:  2/12/21
+## Crossover Gim-Vamp's report on IjustWorkHere:  2/12/21
 
 Link to report: https://docs.google.com/document/d/1SqaIoVOVPu1tSyZY4-8suobg2gzMQInMlo7zBMJdOOg/edit?usp=sharing
 
 Total Score: 24/25
-- Were working on making the login and registration more aesthetically pleasing by adding backgrounds, images, weve extended the background of the base to the other pages, makingthem uniform and more aesthetically pleasing
-- weve made it more obvious that the search bar is there for searching up player names, and we moved it to the main page
+- We're working on making the login and registration more aesthetically pleasing by adding backgrounds, images, weve extended the background of the base to the other pages, makingthem uniform and more aesthetically pleasing
+- We've made it more obvious that the search bar is there for searching up player names, and we moved it to the main page
 - The images not working during the runtime was the fault of the API were taking data from, not our program, although we will still look into this issue to see if there is any way to pull images from the API in a faster or more efficent way so that we can display the updated images
 
 ## Tickets 
